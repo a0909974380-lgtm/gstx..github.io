@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>餐饮茶饮解决方案 · B端合作 · 威海无花果数智助农</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="b2b-common.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .b2b-hero { position:relative; z-index:1; padding:110px 0 40px; text-align:center; color:#fff; }
+    .b2b-hero .badge { display:inline-block; padding:5px 20px; border-radius:100px; background:rgba(62,196,167,0.1); border:1px solid rgba(62,196,167,0.2); font-size:11px; font-weight:600; color:#3ec4a7; margin-bottom:16px; letter-spacing:1.5px; }
+    .b2b-hero h1 { font-size:clamp(26px,3.4vw,42px); font-weight:800; margin-bottom:12px; }
+    .b2b-hero h1 .gr { background:linear-gradient(135deg,#fff 20%,#3ec4a7 55%,#5dade2); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .b2b-hero .lead { font-size:15px; color:rgba(255,255,255,0.5); max-width:640px; margin:0 auto 20px; line-height:1.8; }
+    .hero-tags { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+    .hero-tags span { padding:5px 16px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.7); }
+    .hero-cta { display:inline-flex; padding:13px 32px; border-radius:100px; background:linear-gradient(135deg,#3ec4a7,#2d8a5a); color:#fff; font-size:14px; font-weight:700; text-decoration:none; box-shadow:0 6px 28px rgba(62,196,167,0.3); transition:transform .2s; }
+    .hero-cta:hover { transform:translateY(-2px); }
+
+    .season-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1100px; margin:0 auto 28px; padding:0 24px; }
+    .season-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:22px 20px; text-align:center; transition:transform .3s,border-color .3s; }
+    .season-card:hover { transform:translateY(-3px); border-color:rgba(62,196,167,0.2); }
+    .season-card .sc-emoji { font-size:32px; margin-bottom:10px; }
+    .season-card .sc-season { font-size:12px; font-weight:700; color:#3ec4a7; margin-bottom:6px; letter-spacing:1px; }
+    .season-card .sc-items { font-size:12px; color:rgba(255,255,255,0.5); line-height:1.7; }
+    .bake-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:1100px; margin:0 auto; padding:0 24px; }
+    .product-matrix { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1100px; margin:0 auto; padding:0 24px; }
+    .pm-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:24px 20px; transition:transform .3s,border-color .3s; }
+    .pm-card:hover { transform:translateY(-3px); border-color:rgba(62,196,167,0.2); }
+    .pm-emoji { font-size:32px; margin-bottom:10px; }
+    .pm-card h4 { font-size:15px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .pm-card p { font-size:12.5px; color:rgba(255,255,255,0.45); line-height:1.7; }
+    .pm-stat { margin-top:10px; }
+    .pm-stat span { display:inline-block; padding:3px 10px; border-radius:6px; font-size:10px; font-weight:600; background:rgba(62,196,167,0.1); color:#3ec4a7; }
+
+    .adv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1100px; margin:0 auto; padding:0 24px; }
+    .adv-item { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:22px 20px; transition:transform .3s; }
+    .adv-item:hover { transform:translateY(-3px); }
+    .adv-num { font-family:'Outfit',sans-serif; font-size:20px; font-weight:800; color:rgba(62,196,167,0.25); margin-bottom:8px; }
+    .adv-item h4 { font-size:14px; font-weight:700; color:#fff; margin-bottom:4px; }
+    .adv-item p { font-size:12px; color:rgba(255,255,255,0.4); line-height:1.6; }
+
+    .client-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1100px; margin:0 auto; padding:0 24px; }
+    .client-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:14px; padding:22px 18px; text-align:center; transition:transform .3s; }
+    .client-card:hover { transform:translateY(-3px); }
+    .client-card span { font-size:28px; display:block; margin-bottom:8px; }
+    .client-card h4 { font-size:13px; font-weight:700; color:#fff; margin-bottom:4px; }
+    .client-card p { font-size:11.5px; color:rgba(255,255,255,0.4); line-height:1.6; }
+
+    @media(max-width:768px){ .season-grid,.product-matrix,.adv-grid{grid-template-columns:1fr 1fr;} .bake-row,.client-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="mascot.png" alt="威小果"><span>威海无花果数智助农</span></a>
+    <div class="nav-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html" class="active">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div>
+    <a href="b2b-contact.html" class="nav-cta">申请B端试样</a>
+  </div></nav>
+
+  <div class="b2b-sub-nav"><div class="b2b-sub-nav-inner">
+    <a href="b2b.html" class="active">餐饮茶饮</a>
+    <a href="b2b-corp.html">企业集采</a>
+    <a href="b2b-platform.html">数智平台</a>
+    <a href="b2b-ip.html">IP联名</a>
+    <a href="b2b-contact.html">合作咨询</a>
+  </div></div>
+
+  <section class="b2b-hero">
+    <div class="badge">B2B · PARTNERSHIP · 全场景解决方案</div>
+    <h1><span class="gr">跨界共创，生态赋能</span></h1>
+    <p class="lead">依托源头核心产区与"威小果"数智IP，为您提供从原料供应、产品共创到企业集采的一站式甜蜜方案。</p>
+    <div class="hero-tags"><span>📍 产地直供</span><span>🎨 柔性定制</span><span>🧸 IP赋能</span><span>🔗 透明供应链</span></div>
+    <a href="b2b-contact.html" class="hero-cta">免费申请 B 端试用样品 / 索取报价单</a>
+  </section>
+
+  <section class="b2b-page">
+    <div class="sec-hd"><h2>为新餐饮注入 <span class="accent">"海风酿造"</span> 的研发灵感</h2></div>
+    <p class="sec-sub">深入调研连锁餐饮与茶饮业务流程，提供标准化、高品质的原料直供与定制配方。</p>
+    <div class="season-grid">
+      <div class="season-card reveal"><div class="sc-emoji">🌱</div><div class="sc-season">春 · SPRING</div><div class="sc-items">嫩绿无花果嫩叶浓缩汁<br>+ 清甜鲜果粒<br>口感清新怡人</div></div>
+      <div class="season-card reveal"><div class="sc-emoji">☀️</div><div class="sc-season">夏 · SUMMER</div><div class="sc-items">无花果冰沙粉 + 浓缩汁<br>+ 清爽薄荷调味糖浆<br>消暑解渴之选</div></div>
+      <div class="season-card reveal"><div class="sc-emoji">🍂</div><div class="sc-season">秋 · AUTUMN</div><div class="sc-items">香甜果干碎粒<br>+ 醇厚发酵汁 + 肉桂风味<br>温暖治愈系</div></div>
+      <div class="season-card reveal"><div class="sc-emoji">❄️</div><div class="sc-season">冬 · WINTER</div><div class="sc-items">特熬无花果膏<br>+ 热饮专用果粉 + 姜味糖浆<br>滋补暖心</div></div>
+    </div>
+    <div class="bake-row">
+      <div class="glass-card reveal"><span class="gc-icon">🍰</span><h3>烘焙与甜品联合开发</h3><p>供应高品质果酱与果蜜，联合打造 <span class="highlight">"无花果乳酪欧包"</span>、<span class="highlight">"蜂蜜无花果雪冰"</span>、<span class="highlight">"无花果塔"</span> 等爆款甜品。</p></div>
+      <div class="glass-card reveal"><span class="gc-icon">📦</span><h3>灵活包装供应</h3><p>为快餐连锁提供 <span class="highlight">便携小包装果酱</span>（早餐涂抹），为高档西餐厅提供大容量罐装；引入智能定量包装系统，减少后厨食材损耗。</p></div>
+    </div>
+
+    <!-- 爆款产品矩阵 -->
+    <div class="sec-hd" style="margin-top:48px;margin-bottom:24px;"><h2>爆款产品 <span class="accent">矩阵</span></h2></div>
+    <div class="product-matrix">
+      <div class="pm-card reveal"><div class="pm-emoji">🍹</div><h4>海盐无花果云朵茶</h4><p>清甜果粒 + 海盐奶盖，颜值与口感双在线，上线首周即成门店 TOP1</p><div class="pm-stat"><span>日均出杯 200+</span></div></div>
+      <div class="pm-card reveal"><div class="pm-emoji">🧁</div><h4>无花果乳酪欧包</h4><p>手工果酱内馅 + 丹麦面团，果肉清晰可见，烘焙渠道复购率 72%</p><div class="pm-stat"><span>月销 8,000+</span></div></div>
+      <div class="pm-card reveal"><div class="pm-emoji">🍨</div><h4>蜂蜜无花果雪冰</h4><p>特选威海果蜜 + 纯鲜乳基底，绵密细腻，夏季限定引爆社媒打卡</p><div class="pm-stat"><span>小红书曝光 50W+</span></div></div>
+      <div class="pm-card reveal"><div class="pm-emoji">🥐</div><h4>无花果塔</h4><p>酥脆塔皮搭配新鲜果酱与杏仁奶油馅，法式经典与在地食材的完美邂逅</p><div class="pm-stat"><span>西餐厅热销款</span></div></div>
+      <div class="pm-card reveal"><div class="pm-emoji">🥤</div><h4>无花果冰沙</h4><p>浓缩汁 + 冰沙粉 + 薄荷糖浆，30 秒出品，标准化配方零失败</p><div class="pm-stat"><span>出餐效率 3x</span></div></div>
+      <div class="pm-card reveal"><div class="pm-emoji">🫖</div><h4>无花果养生热饮</h4><p>特熬果膏 + 热饮专用果粉 + 姜味糖浆，冬季暖心引流产品</p><div class="pm-stat"><span>冬季日销 150+</span></div></div>
+    </div>
+
+    <!-- 合作优势 -->
+    <div class="sec-hd" style="margin-top:48px;margin-bottom:24px;"><h2>合作 <span class="accent">六大优势</span></h2></div>
+    <div class="adv-grid">
+      <div class="adv-item reveal"><div class="adv-num">01</div><h4>源头直供</h4><p>威海核心产区直发，省去中间环节，成本降低 15-20%</p></div>
+      <div class="adv-item reveal"><div class="adv-num">02</div><h4>柔性定制</h4><p>支持甜度、浓度、包装规格等参数定制，最小起订量 50kg</p></div>
+      <div class="adv-item reveal"><div class="adv-num">03</div><h4>品质溯源</h4><p>区块链溯源 + 每批次品控报告，让终端消费者扫码即查</p></div>
+      <div class="adv-item reveal"><div class="adv-num">04</div><h4>研发赋能</h4><p>专属食品研发团队配合，协助打造差异化新品与季节限定</p></div>
+      <div class="adv-item reveal"><div class="adv-num">05</div><h4>冷链保障</h4><p>全程 2-8°C 冷链运输，实时温控上链，鲜度不打折</p></div>
+      <div class="adv-item reveal"><div class="adv-num">06</div><h4>营销支持</h4><p>提供产品海报、社媒素材、IP联名杯套等整套营销物料包</p></div>
+    </div>
+
+    <!-- 合作客户 -->
+    <div class="sec-hd" style="margin-top:48px;margin-bottom:24px;"><h2>已合作 <span class="accent">客户类型</span></h2></div>
+    <div class="client-grid">
+      <div class="client-card reveal"><span>🧋</span><h4>新式茶饮连锁</h4><p>为全国 50+ 门店提供四季原料套装，日均消耗原浆 200kg</p></div>
+      <div class="client-card reveal"><span>🍰</span><h4>精品烘焙坊</h4><p>独家供应无添加果酱，支持 OEM 代工与品牌贴牌</p></div>
+      <div class="client-card reveal"><span>🍽️</span><h4>高端西餐厅</h4><p>提供大容量罐装果酱、果蜜，用于菜品研发与甜品出品</p></div>
+      <div class="client-card reveal"><span>🏪</span><h4>连锁便利店</h4><p>便携小包装果酱与果干，适配早餐、下午茶即食场景</p></div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="footer-brand">威小果</div><div class="footer-tagline">"果"色天香 · 数智IP驱动无花果全链增值</div><div class="footer-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div><div class="footer-copy">© 2026 威小果 · 威海无花果数智助农项目</div></footer>
+  <div class="mascot-wrap" id="mascot-wrap" title="点击和威小果聊天"><div class="mascot-el" id="mascot-el"><div class="mascot-inner"><img src="mascot.png" alt="威小果"></div></div></div>
+  <div class="chat-panel" id="chat-panel"><div class="chat-hd"><h3>和威小果聊天</h3><button class="chat-close" id="chat-close">×</button></div><div class="chat-msgs" id="chat-msgs"></div><div class="chat-input-wrap"><input type="text" class="chat-input" id="chat-input" placeholder="输入消息..." maxlength="200" autocomplete="off"><button class="chat-send" id="chat-send">➤</button></div></div>
+  <script src="chat.js"></script>
+  <script>
+  (function(){
+    var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%4)*.08+'s';obs.observe(el);});
+    lucide.createIcons();
+  })();
+  </script>
+</body>
+</html>

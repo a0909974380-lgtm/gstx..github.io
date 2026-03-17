@@ -1,0 +1,27 @@
+body { background: #080e0b; }
+body::after { content:''; position:fixed; inset:0; background:url('图片4.jpg') center/cover no-repeat; filter:blur(8px) brightness(1.1); transform:scale(1.06); pointer-events:none; z-index:-2; }
+body::before { content:''; position:fixed; inset:0; background:rgba(8,16,10,0.32); pointer-events:none; z-index:-1; }
+
+.b2b-sub-nav { position:sticky; top:56px; z-index:90; background:rgba(255,255,255,0.08); backdrop-filter:blur(28px) brightness(1.05); -webkit-backdrop-filter:blur(28px) brightness(1.05); border-bottom:1px solid rgba(255,255,255,0.06); }
+.b2b-sub-nav-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; justify-content:center; gap:0; overflow-x:auto; scrollbar-width:none; }
+.b2b-sub-nav-inner::-webkit-scrollbar { display:none; }
+.b2b-sub-nav-inner a { padding:14px 24px; font-size:13px; font-weight:600; color:rgba(255,255,255,0.5); white-space:nowrap; transition:color .2s,background .2s; border-bottom:2.5px solid transparent; text-decoration:none; }
+.b2b-sub-nav-inner a:hover { color:rgba(255,255,255,0.8); background:rgba(255,255,255,0.03); }
+.b2b-sub-nav-inner a.active { color:#3ec4a7; border-bottom-color:#3ec4a7; background:rgba(62,196,167,0.06); }
+
+.b2b-page { position:relative; z-index:1; padding:48px 0 64px; color:#fff; }
+.b2b-page .sec-hd { text-align:center; margin-bottom:14px; }
+.b2b-page .sec-hd h2 { font-size:clamp(22px,2.8vw,32px); font-weight:800; color:#fff; }
+.b2b-page .sec-hd .accent { color:#3ec4a7; }
+.b2b-page .sec-sub { text-align:center; font-size:14px; color:rgba(255,255,255,0.4); max-width:640px; margin:0 auto 40px; line-height:1.7; }
+
+.glass-card { background:rgba(10,20,14,0.72); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:28px 28px 24px; transition:transform .3s,border-color .3s,box-shadow .3s; }
+.glass-card:hover { transform:translateY(-4px); border-color:rgba(62,196,167,0.25); box-shadow:0 14px 44px rgba(0,0,0,0.2); }
+.glass-card h3 { font-size:17px; font-weight:700; color:#fff; margin-bottom:8px; }
+.glass-card .gc-icon { font-size:28px; margin-bottom:12px; display:block; }
+.glass-card p { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.8; }
+.glass-card .highlight { color:#5ee8c5; font-weight:600; }
+
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .6s,transform .6s; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.footer { position:relative; z-index:1; }

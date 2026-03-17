@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>威小果IP · 威小果 · 海风酿造的东方甜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css" />
+  <style>
+    .ip-hero {
+      padding: 56px 0 48px;
+      background: var(--page-bg);
+    }
+    .ip-hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .ip-fig {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #8fce5c 0%, #6fa038 100%);
+      box-shadow: 0 16px 32px rgba(44, 56, 41, 0.12);
+      flex-shrink: 0;
+    }
+    .ip-hero-text h1 { margin-bottom: 12px; }
+    .ip-hero-text .lead { margin: 0; }
+    .ip-content { padding: 24px 0 56px; background: var(--page-bg); }
+    .ip-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .ip-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+    .ip-card h3 { font-size: 18px; margin: 0 0 8px 0; color: var(--text-primary); }
+    .ip-card p { font-size: 15px; color: var(--text-secondary); margin: 0; line-height: 1.65; }
+    .metaverse-cta { margin-top: 32px; }
+    @media (max-width: 768px) { .ip-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="site-nav-logo">威小果</a>
+      <a href="index.html">首页</a>
+      <a href="ip.html" class="active">威小果IP</a>
+      <a href="tech.html">溯源科技</a>
+      <a href="products.html">产品橱窗</a>
+      <a href="b2b.html">商务合作</a>
+    </div>
+    <a href="member.html" class="site-nav-cta">加入会员</a>
+  </nav>
+
+  <main class="main">
+    <section class="ip-hero">
+      <div class="container">
+        <div class="ip-hero-inner">
+          <div class="ip-fig" aria-hidden="true"></div>
+          <div class="ip-hero-text">
+            <h1 class="page-title">威小果IP</h1>
+            <p class="lead page-lead">品牌吉祥物「威小果」—— 一颗戴着草帽、手持放大镜的绿色无花果，象征威海海风与果园的甜美结合，传递「海风酿造的东方甜」。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ip-content section">
+      <div class="container">
+        <h2 class="section-title">无花果屿 · 虚拟世界</h2>
+        <p class="section-desc">青皮工坊、甜度迷宫，在元宇宙里探索威小果的故事。</p>
+        <div class="ip-grid">
+          <div class="ip-card">
+            <h3>青皮工坊</h3>
+            <p>在虚拟工坊中体验无花果从青皮到成熟的过程，了解品质与工艺。</p>
+          </div>
+          <div class="ip-card">
+            <h3>甜度迷宫</h3>
+            <p>趣味迷宫与甜度挑战，让年轻用户与威小果IP深度互动。</p>
+          </div>
+        </div>
+        <div class="metaverse-cta">
+          <a href="#" class="btn btn-primary">进入无花果屿</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-logo">威小果</div>
+    <div class="site-footer-tagline">海风酿造的东方甜</div>
+    <div class="site-footer-copy">© 威小果 数智助农</div>
+  </footer>
+</body>
+</html>

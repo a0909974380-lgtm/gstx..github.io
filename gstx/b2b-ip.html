@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP联名计划 · B端合作 · 威海无花果数智助农</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="b2b-common.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .ip-hero-block { max-width:1100px; margin:0 auto 48px; padding:0 24px; display:flex; gap:32px; align-items:stretch; }
+    .ip-hero-left { flex:1; background:rgba(10,20,14,0.7); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:36px 32px; }
+    .ip-hero-left h3 { font-size:22px; font-weight:800; color:#fff; margin-bottom:10px; line-height:1.4; }
+    .ip-hero-left h3 .accent { color:#3ec4a7; }
+    .ip-hero-left p { font-size:14px; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:14px; }
+    .ip-hero-left .ip-tags { display:flex; flex-wrap:wrap; gap:8px; }
+    .ip-hero-left .ip-tag { padding:5px 14px; border-radius:8px; background:rgba(62,196,167,0.08); color:#5ee8c5; font-size:12px; font-weight:600; border:1px solid rgba(62,196,167,0.15); }
+    .ip-hero-right { flex:0 0 320px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .ip-stat-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:14px; padding:22px 16px; text-align:center; }
+    .ip-stat-card .isc-num { font-family:'Outfit',sans-serif; font-size:26px; font-weight:800; }
+    .ip-stat-card .isc-label { font-size:11px; color:rgba(255,255,255,0.4); margin-top:4px; line-height:1.4; }
+
+    .collab-section { max-width:1100px; margin:0 auto 56px; padding:0 24px; }
+    .collab-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .collab-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:16px; overflow:hidden; transition:transform .3s,border-color .3s; }
+    .collab-card:hover { transform:translateY(-3px); border-color:rgba(62,196,167,0.2); }
+    .collab-card-img { height:140px; background:linear-gradient(135deg,rgba(62,196,167,0.15),rgba(168,120,255,0.1)); display:flex; align-items:center; justify-content:center; font-size:48px; }
+    .collab-card-body { padding:20px; }
+    .collab-card-body h4 { font-size:15px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .collab-card-body p { font-size:12.5px; color:rgba(255,255,255,0.45); line-height:1.7; }
+    .collab-card-body .cc-tag { display:inline-block; margin-top:10px; padding:3px 10px; border-radius:6px; font-size:10px; font-weight:600; background:rgba(168,120,255,0.1); color:#a878ff; }
+
+    .process-section { max-width:900px; margin:0 auto 56px; padding:0 24px; }
+    .process-steps { position:relative; }
+    .process-steps::before { content:''; position:absolute; left:24px; top:0; bottom:0; width:2px; background:rgba(62,196,167,0.12); }
+    .process-step { position:relative; padding-left:64px; margin-bottom:28px; }
+    .process-step:last-child { margin-bottom:0; }
+    .process-step .ps-dot { position:absolute; left:14px; top:4px; width:22px; height:22px; border-radius:50%; background:rgba(62,196,167,0.15); border:2px solid rgba(62,196,167,0.4); display:flex; align-items:center; justify-content:center; }
+    .process-step .ps-dot span { font-size:10px; }
+    .process-step h4 { font-size:14px; font-weight:700; color:#fff; margin-bottom:4px; }
+    .process-step p { font-size:12.5px; color:rgba(255,255,255,0.45); line-height:1.7; }
+    .process-step .ps-time { font-size:11px; color:#3ec4a7; font-weight:600; margin-top:4px; }
+
+    .value-section { max-width:1100px; margin:0 auto 56px; padding:0 24px; }
+    .value-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .value-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:22px 18px; text-align:center; transition:transform .3s; }
+    .value-card:hover { transform:translateY(-3px); }
+    .value-card .vc-emoji { font-size:28px; margin-bottom:8px; }
+    .value-card h4 { font-size:13px; font-weight:700; color:#fff; margin-bottom:4px; }
+    .value-card p { font-size:11.5px; color:rgba(255,255,255,0.4); line-height:1.6; }
+
+    .cases-section { max-width:1100px; margin:0 auto; padding:0 24px; }
+    .case-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .case-card { background:rgba(10,20,14,0.65); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:28px 24px; display:flex; gap:20px; align-items:flex-start; transition:transform .3s; }
+    .case-card:hover { transform:translateY(-3px); }
+    .case-card .cc-logo { width:56px; height:56px; border-radius:14px; background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; font-size:28px; flex-shrink:0; }
+    .case-card .cc-info h4 { font-size:15px; font-weight:700; color:#fff; margin-bottom:4px; }
+    .case-card .cc-info .cc-type { font-size:11px; color:#3ec4a7; font-weight:600; margin-bottom:8px; }
+    .case-card .cc-info p { font-size:12.5px; color:rgba(255,255,255,0.45); line-height:1.7; }
+
+    @media(max-width:768px){
+      .ip-hero-block { flex-direction:column; }
+      .ip-hero-right { flex:none; grid-template-columns:1fr 1fr; }
+      .collab-grid { grid-template-columns:1fr; }
+      .value-grid { grid-template-columns:1fr 1fr; }
+      .case-grid { grid-template-columns:1fr; }
+      .case-card { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="mascot.png" alt="威小果"><span>威海无花果数智助农</span></a>
+    <div class="nav-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html" class="active">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div>
+    <a href="b2b-contact.html" class="nav-cta">申请B端试样</a>
+  </div></nav>
+
+  <div class="b2b-sub-nav"><div class="b2b-sub-nav-inner">
+    <a href="b2b.html">餐饮茶饮</a><a href="b2b-corp.html">企业集采</a><a href="b2b-platform.html">数智平台</a><a href="b2b-ip.html" class="active">IP联名</a><a href="b2b-contact.html">合作咨询</a>
+  </div></div>
+
+  <section class="b2b-page">
+    <div class="sec-hd"><h2>"产品 + IP授权" <span class="accent">双重赋能</span></h2></div>
+    <p class="sec-sub">"威小果"不仅是包装上的图案，更是自带流量与好感度的数字文化资产。</p>
+
+    <!-- Hero 双栏 -->
+    <div class="ip-hero-block reveal">
+      <div class="ip-hero-left">
+        <h3>开放 <span class="accent">IP 授权</span>，共享品牌势能</h3>
+        <p>我们开放"威小果"IP授权，与快消零食品牌联合推出联名产品（如无花果味汽水、无花果功能性软糖等）。搭配联名杯套、包装袋等营销物料，帮助合作伙伴提升溢价空间。</p>
+        <div class="ip-tags">
+          <span class="ip-tag">形象授权</span><span class="ip-tag">联名产品</span><span class="ip-tag">营销物料</span><span class="ip-tag">数字藏品</span><span class="ip-tag">短视频共创</span>
+        </div>
+      </div>
+      <div class="ip-hero-right">
+        <div class="ip-stat-card"><div class="isc-num" style="color:#3ec4a7;">15-20%</div><div class="isc-label">合作伙伴平均<br>溢价提升</div></div>
+        <div class="ip-stat-card"><div class="isc-num" style="color:#a878ff;">50+</div><div class="isc-label">IP 素材库<br>可商用形象</div></div>
+        <div class="ip-stat-card"><div class="isc-num" style="color:#f0644a;">100%</div><div class="isc-label">正版授权<br>法律保障</div></div>
+        <div class="ip-stat-card"><div class="isc-num" style="color:#febc2e;">3-7天</div><div class="isc-label">授权审批<br>快速通道</div></div>
+      </div>
+    </div>
+
+    <!-- 联名产品方向 -->
+    <div class="collab-section">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>联名产品 <span class="accent">方向</span></h2></div>
+      <div class="collab-grid">
+        <div class="collab-card reveal">
+          <div class="collab-card-img">🥤</div>
+          <div class="collab-card-body"><h4>无花果风味饮品</h4><p>与新茶饮品牌联合推出季节限定无花果饮品，搭配威小果联名杯套、吸管装饰，社交传播力强</p><span class="cc-tag">饮品联名</span></div>
+        </div>
+        <div class="collab-card reveal">
+          <div class="collab-card-img" style="background:linear-gradient(135deg,rgba(240,100,74,0.15),rgba(254,188,46,0.1));">🍬</div>
+          <div class="collab-card-body"><h4>功能性软糖/零食</h4><p>与健康零食品牌合作开发无花果益生菌软糖、纤维棒等功能性产品，IP形象赋予产品辨识度</p><span class="cc-tag">健康零食</span></div>
+        </div>
+        <div class="collab-card reveal">
+          <div class="collab-card-img" style="background:linear-gradient(135deg,rgba(168,120,255,0.15),rgba(94,232,197,0.1));">🧴</div>
+          <div class="collab-card-body"><h4>美妆护肤联名</h4><p>提取无花果天然活性成分，与护肤品牌合作推出联名面膜、护手霜等产品，主打自然健康理念</p><span class="cc-tag">美妆跨界</span></div>
+        </div>
+        <div class="collab-card reveal">
+          <div class="collab-card-img" style="background:linear-gradient(135deg,rgba(62,196,167,0.1),rgba(255,220,180,0.1));">🎒</div>
+          <div class="collab-card-body"><h4>潮流文创周边</h4><p>联名帆布包、联名卫衣、限定盲盒、冰箱贴等，面向Z世代消费群体，打造社交货币属性</p><span class="cc-tag">潮玩文创</span></div>
+        </div>
+        <div class="collab-card reveal">
+          <div class="collab-card-img" style="background:linear-gradient(135deg,rgba(94,232,197,0.15),rgba(62,196,167,0.08));">🎮</div>
+          <div class="collab-card-body"><h4>数字藏品 & 游戏</h4><p>联合发行威小果系列数字藏品，与游戏平台合作推出限定皮肤/道具，打通线上线下权益</p><span class="cc-tag">数字IP</span></div>
+        </div>
+        <div class="collab-card reveal">
+          <div class="collab-card-img" style="background:linear-gradient(135deg,rgba(254,188,46,0.12),rgba(240,100,74,0.08));">🏨</div>
+          <div class="collab-card-body"><h4>文旅空间联名</h4><p>与景区、酒店打造威小果主题体验空间，沉浸式互动装置+IP周边售卖+现做饮品体验</p><span class="cc-tag">文旅体验</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 授权流程 -->
+    <div class="process-section">
+      <div class="sec-hd" style="margin-bottom:28px;"><h2>IP 授权 <span class="accent">流程</span></h2></div>
+      <div class="process-steps reveal">
+        <div class="process-step"><div class="ps-dot"><span>1</span></div><h4>提交合作意向</h4><p>通过表单或商务对接提交品牌信息、合作方向与预期规模</p><div class="ps-time">Day 1</div></div>
+        <div class="process-step"><div class="ps-dot"><span>2</span></div><h4>商务评估 & 方案制定</h4><p>IP运营团队评估品牌匹配度，制定授权方案与权益范围</p><div class="ps-time">Day 2-4</div></div>
+        <div class="process-step"><div class="ps-dot"><span>3</span></div><h4>签署授权协议</h4><p>确认授权期限、使用范围、分成模式等核心条款</p><div class="ps-time">Day 5-7</div></div>
+        <div class="process-step"><div class="ps-dot"><span>4</span></div><h4>素材交付 & 设计协作</h4><p>提供全套IP素材包（矢量/3D/动态），IP设计师协助联名产品视觉把关</p><div class="ps-time">Day 8-14</div></div>
+        <div class="process-step"><div class="ps-dot"><span>5</span></div><h4>产品上线 & 联合推广</h4><p>双方共同发布联名产品，共享社媒传播资源，持续跟踪销售数据</p><div class="ps-time">Day 15+</div></div>
+      </div>
+    </div>
+
+    <!-- IP 价值矩阵 -->
+    <div class="value-section">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>IP 授权 <span class="accent">核心价值</span></h2></div>
+      <div class="value-grid">
+        <div class="value-card reveal"><div class="vc-emoji">🎯</div><h4>精准人群触达</h4><p>覆盖18-35岁健康消费主力军，高匹配度带来高转化</p></div>
+        <div class="value-card reveal"><div class="vc-emoji">💰</div><h4>溢价空间释放</h4><p>国潮IP加持，同品类产品售价平均提升15-20%</p></div>
+        <div class="value-card reveal"><div class="vc-emoji">📱</div><h4>社交传播裂变</h4><p>高颜值IP形象自带传播属性，用户自发分享率提升3倍</p></div>
+        <div class="value-card reveal"><div class="vc-emoji">🌿</div><h4>ESG 品牌赋能</h4><p>每一次联名都是助农行动，提升品牌社会责任形象</p></div>
+        <div class="value-card reveal"><div class="vc-emoji">📦</div><h4>供应链协同</h4><p>联名产品可直接对接优质无花果原料供应，品质保障</p></div>
+        <div class="value-card reveal"><div class="vc-emoji">🔒</div><h4>正版法律保障</h4><p>完善的知识产权保护体系，授权链路清晰可查证</p></div>
+        <div class="value-card reveal"><div class="vc-emoji">🎨</div><h4>定制设计服务</h4><p>IP设计团队配合定制，确保联名产品视觉统一协调</p></div>
+        <div class="value-card reveal"><div class="vc-emoji">📊</div><h4>数据驱动运营</h4><p>区块链追踪联名产品销售数据，为持续合作提供依据</p></div>
+      </div>
+    </div>
+
+    <!-- 合作案例 -->
+    <div class="cases-section">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>合作 <span class="accent">案例展示</span></h2></div>
+      <div class="case-grid">
+        <div class="case-card reveal">
+          <div class="cc-logo">🍵</div>
+          <div class="cc-info"><h4>× 某新茶饮品牌</h4><div class="cc-type">饮品联名 · 季节限定</div><p>联合推出"海盐无花果云朵茶"，搭配威小果联名杯套，上线首周即售出 12,000+ 杯，社媒话题曝光超 800 万次。</p></div>
+        </div>
+        <div class="case-card reveal">
+          <div class="cc-logo">🎁</div>
+          <div class="cc-info"><h4>× 某头部互联网企业</h4><div class="cc-type">企业礼盒定制</div><p>为其 5000 名员工定制中秋礼盒（果酒+果酱+IP手办），员工满意度评分 4.9/5，复购意向率 76%。</p></div>
+        </div>
+        <div class="case-card reveal">
+          <div class="cc-logo">🏖️</div>
+          <div class="cc-info"><h4>× 威海某5A景区</h4><div class="cc-type">文旅空间联名</div><p>打造威小果主题体验店，集现做饮品、文创售卖、溯源互动于一体，日均客流 1,200+，人均消费 ¥68。</p></div>
+        </div>
+        <div class="case-card reveal">
+          <div class="cc-logo">💄</div>
+          <div class="cc-info"><h4>× 某国潮护肤品牌</h4><div class="cc-type">美妆跨界联名</div><p>联合推出无花果精华面膜礼盒，IP包装设计获"红点设计奖"提名，首批 3,000 套 48 小时售罄。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="footer-brand">威小果</div><div class="footer-tagline">"果"色天香 · 数智IP驱动无花果全链增值</div><div class="footer-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div><div class="footer-copy">© 2026 威小果 · 威海无花果数智助农项目</div></footer>
+  <div class="mascot-wrap" id="mascot-wrap" title="点击和威小果聊天"><div class="mascot-el" id="mascot-el"><div class="mascot-inner"><img src="mascot.png" alt="威小果"></div></div></div>
+  <div class="chat-panel" id="chat-panel"><div class="chat-hd"><h3>和威小果聊天</h3><button class="chat-close" id="chat-close">×</button></div><div class="chat-msgs" id="chat-msgs"></div><div class="chat-input-wrap"><input type="text" class="chat-input" id="chat-input" placeholder="输入消息..." maxlength="200" autocomplete="off"><button class="chat-send" id="chat-send">➤</button></div></div>
+  <script src="chat.js"></script>
+  <script>(function(){var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.1});document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%6)*.06+'s';obs.observe(el);});lucide.createIcons();})();</script>
+</body>
+</html>

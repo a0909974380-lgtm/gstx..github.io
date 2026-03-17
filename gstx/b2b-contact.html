@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>合作咨询 · B端合作 · 威海无花果数智助农</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="b2b-common.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .form-wrap { max-width:640px; margin:0 auto; background:rgba(10,20,14,0.78); backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.08); border-radius:24px; padding:40px 40px 36px; }
+    .form-wrap h2 { font-size:24px; font-weight:800; color:#fff; text-align:center; margin-bottom:6px; }
+    .form-wrap .form-sub { font-size:13px; color:rgba(255,255,255,0.4); text-align:center; margin-bottom:28px; line-height:1.6; }
+    .f-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+    .f-row.full { grid-template-columns:1fr; }
+    .f-group { display:flex; flex-direction:column; gap:5px; }
+    .f-group label { font-size:12px; font-weight:600; color:rgba(255,255,255,0.5); }
+    .f-group input,.f-group select { padding:11px 14px; border-radius:10px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#fff; font-size:14px; font-family:var(--font); outline:none; transition:border-color .2s; }
+    .f-group input::placeholder { color:rgba(255,255,255,0.2); }
+    .f-group input:focus,.f-group select:focus { border-color:#3ec4a7; }
+    .f-group select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
+    .f-group select option { background:#1a2a20; color:#fff; }
+    .f-submit { width:100%; margin-top:8px; padding:14px; border-radius:12px; background:linear-gradient(135deg,#3ec4a7,#2d8a5a); color:#fff; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:var(--font); transition:transform .2s,box-shadow .2s; }
+    .f-submit:hover { transform:translateY(-1px); box-shadow:0 8px 28px rgba(62,196,167,0.3); }
+    .form-success { display:none; text-align:center; padding:40px 0; }
+    .form-success .fs-icon { font-size:52px; margin-bottom:12px; }
+    .form-success h3 { font-size:20px; font-weight:700; color:#fff; margin-bottom:8px; }
+    .form-success p { font-size:14px; color:rgba(255,255,255,0.45); }
+    .trust-bar { display:flex; justify-content:center; gap:28px; flex-wrap:wrap; max-width:800px; margin:0 auto 36px; }
+    .trust-item { display:flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:rgba(255,255,255,0.6); }
+    .ti-icon { font-size:18px; }
+
+    .faq-section { max-width:720px; margin:56px auto 0; padding:0 24px; }
+    .faq-list { display:flex; flex-direction:column; gap:14px; }
+    .faq-item { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:14px; padding:20px 22px; }
+    .faq-item h4 { font-size:14px; font-weight:700; color:#5ee8c5; margin-bottom:6px; }
+    .faq-item p { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.7; }
+
+    .contact-bar { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:900px; margin:48px auto 0; padding:0 24px; }
+    .cb-item { display:flex; align-items:flex-start; gap:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:18px 16px; }
+    .cb-icon { font-size:22px; flex-shrink:0; }
+    .cb-item h4 { font-size:12px; font-weight:700; color:rgba(255,255,255,0.7); margin-bottom:2px; }
+    .cb-item p { font-size:12px; color:rgba(255,255,255,0.45); }
+
+    @media(max-width:768px){ .f-row{grid-template-columns:1fr;} .trust-bar{gap:14px;} .contact-bar{grid-template-columns:1fr 1fr;} }
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="mascot.png" alt="威小果"><span>威海无花果数智助农</span></a>
+    <div class="nav-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html" class="active">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div>
+    <a href="b2b-contact.html" class="nav-cta">申请B端试样</a>
+  </div></nav>
+
+  <div class="b2b-sub-nav"><div class="b2b-sub-nav-inner">
+    <a href="b2b.html">餐饮茶饮</a>
+    <a href="b2b-corp.html">企业集采</a>
+    <a href="b2b-platform.html">数智平台</a>
+    <a href="b2b-ip.html">IP联名</a>
+    <a href="b2b-contact.html" class="active">合作咨询</a>
+  </div></div>
+
+  <section class="b2b-page">
+    <div class="sec-hd"><h2>开启您的 <span class="accent">甜蜜定制之旅</span></h2></div>
+    <p class="sec-sub">留下您的需求，B 端大客户经理将在 24 小时内为您提供专属合作方案及试样服务。</p>
+
+    <!-- 信任标识 -->
+    <div class="trust-bar">
+      <div class="trust-item"><span class="ti-icon">⏱️</span><span>24h 内响应</span></div>
+      <div class="trust-item"><span class="ti-icon">📦</span><span>免费寄送样品</span></div>
+      <div class="trust-item"><span class="ti-icon">🔒</span><span>信息严格保密</span></div>
+      <div class="trust-item"><span class="ti-icon">📋</span><span>定制方案报价</span></div>
+    </div>
+
+    <!-- 表单 -->
+    <div class="form-wrap reveal">
+      <form id="b2b-form-el" onsubmit="return false;">
+        <div class="f-row">
+          <div class="f-group"><label>企业名称</label><input type="text" placeholder="请输入企业全称" required></div>
+          <div class="f-group"><label>联系人姓名 & 职务</label><input type="text" placeholder="如：张经理 / 采购总监" required></div>
+        </div>
+        <div class="f-row">
+          <div class="f-group"><label>联系电话 / 微信</label><input type="text" placeholder="手机号或微信号" required></div>
+          <div class="f-group">
+            <label>感兴趣的合作方向</label>
+            <select required>
+              <option value="" disabled selected>请选择合作方向…</option>
+              <option value="catering">餐饮茶饮原料</option>
+              <option value="corporate">企业福利集采</option>
+              <option value="ip">IP跨界联名</option>
+              <option value="farm">专属果园认领</option>
+              <option value="other">其他</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-row full">
+          <div class="f-group"><label>补充说明（选填）</label><textarea placeholder="如：预计采购数量、定制需求、希望的合作形式等" rows="3" style="padding:11px 14px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff;font-size:14px;font-family:var(--font);outline:none;transition:border-color .2s;resize:vertical;" onfocus="this.style.borderColor='#3ec4a7'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea></div>
+        </div>
+        <button type="submit" class="f-submit" id="f-submit-btn">提交需求</button>
+      </form>
+
+      <div class="form-success" id="form-success">
+        <div class="fs-icon">✅</div>
+        <h3>需求已收到！</h3>
+        <p>我们的 B 端大客户经理将在 24 小时内与您联系，感谢您的信任。</p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>常见 <span class="accent">问题</span></h2></div>
+      <div class="faq-list">
+        <div class="faq-item reveal"><h4>Q: 最低起订量是多少？</h4><p>鲜果类最低 10kg 起订，加工品（果酱/果酒/果干）最低 50 件起订。企业定制礼盒 50 盒起订。详情请联系客户经理。</p></div>
+        <div class="faq-item reveal"><h4>Q: 是否支持免费打样？</h4><p>首次合作免费提供 3 款标品样品试用，运费由我方承担。定制产品打样费用另议，正式下单后可折抵货款。</p></div>
+        <div class="faq-item reveal"><h4>Q: 配送范围覆盖哪些地区？</h4><p>冷链物流覆盖全国（偏远地区需加收物流费），常规产品 72 小时内送达一二线城市。海外配送请联系洽谈。</p></div>
+        <div class="faq-item reveal"><h4>Q: IP 授权费用如何计算？</h4><p>根据授权范围（品类、地域、期限）灵活定价，支持固定授权费或销售分成两种模式。首年合作享优惠费率。</p></div>
+        <div class="faq-item reveal"><h4>Q: 是否提供产品溯源定制？</h4><p>支持！合伙人可将"一果一码"溯源系统接入自有品牌展示，扫码页面支持定制化 VI 设计。API 对接最快 2 天完成。</p></div>
+        <div class="faq-item reveal"><h4>Q: 支持哪些结算方式？</h4><p>支持月结、季度结算、预付等灵活方式。年度采购协议客户可享账期优惠，签约即锁定年度价格保护。</p></div>
+      </div>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="contact-bar">
+      <div class="cb-item"><span class="cb-icon">📞</span><div><h4>商务热线</h4><p>400-888-0631</p></div></div>
+      <div class="cb-item"><span class="cb-icon">✉️</span><div><h4>商务邮箱</h4><p>b2b@weixiaoguo.com</p></div></div>
+      <div class="cb-item"><span class="cb-icon">📍</span><div><h4>总部地址</h4><p>山东省威海市环翠区</p></div></div>
+      <div class="cb-item"><span class="cb-icon">🕒</span><div><h4>工作时间</h4><p>周一至周六 9:00-18:00</p></div></div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="footer-brand">威小果</div><div class="footer-tagline">"果"色天香 · 数智IP驱动无花果全链增值</div><div class="footer-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div><div class="footer-copy">© 2026 威小果 · 威海无花果数智助农项目</div></footer>
+  <div class="mascot-wrap" id="mascot-wrap" title="点击和威小果聊天"><div class="mascot-el" id="mascot-el"><div class="mascot-inner"><img src="mascot.png" alt="威小果"></div></div></div>
+  <div class="chat-panel" id="chat-panel"><div class="chat-hd"><h3>和威小果聊天</h3><button class="chat-close" id="chat-close">×</button></div><div class="chat-msgs" id="chat-msgs"></div><div class="chat-input-wrap"><input type="text" class="chat-input" id="chat-input" placeholder="输入消息..." maxlength="200" autocomplete="off"><button class="chat-send" id="chat-send">➤</button></div></div>
+  <script src="chat.js"></script>
+  <script>
+  (function(){
+    var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+
+    document.getElementById('b2b-form-el').addEventListener('submit',function(e){
+      e.preventDefault();
+      var inputs=this.querySelectorAll('input,select');
+      var valid=true;
+      inputs.forEach(function(inp){if(!inp.value)valid=false;});
+      if(!valid){alert('请填写完整信息');return;}
+      this.style.display='none';
+      document.getElementById('form-success').style.display='block';
+    });
+    lucide.createIcons();
+  })();
+  </script>
+</body>
+</html>

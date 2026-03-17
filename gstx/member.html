@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>加入会员 · 威小果 · 海风酿造的东方甜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css" />
+  <style>
+    .member-page {
+      padding: 48px 0 56px;
+      background: var(--page-bg);
+      min-height: calc(100vh - 64px - 120px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .member-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 40px 48px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: var(--shadow-card);
+    }
+    .member-card h1 { margin-bottom: 12px; }
+    .member-card .lead {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin: 0 0 28px 0;
+      line-height: 1.65;
+    }
+    .member-form .field {
+      margin-bottom: 20px;
+    }
+    .member-form label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .member-form input {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 15px;
+      font-family: var(--font-body);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      background: var(--page-bg);
+      color: var(--text-primary);
+      transition: border-color 0.2s;
+    }
+    .member-form input:focus {
+      outline: none;
+      border-color: var(--fig-green);
+    }
+    .member-form .btn { width: 100%; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="site-nav-logo">威小果</a>
+      <a href="index.html">首页</a>
+      <a href="ip.html">威小果IP</a>
+      <a href="tech.html">溯源科技</a>
+      <a href="products.html">产品橱窗</a>
+      <a href="b2b.html">商务合作</a>
+    </div>
+    <a href="member.html" class="site-nav-cta active">加入会员</a>
+  </nav>
+
+  <main class="main">
+    <section class="member-page">
+      <div class="container">
+        <div class="member-card">
+          <h1 class="page-title">加入会员</h1>
+          <p class="lead">注册成为威小果会员，享受溯源查询、专属优惠与活动优先参与。</p>
+          <form class="member-form" action="#" method="post">
+            <div class="field">
+              <label for="phone">手机号</label>
+              <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required />
+            </div>
+            <div class="field">
+              <label for="code">验证码</label>
+              <input type="text" id="code" name="code" placeholder="请输入验证码" required />
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-logo">威小果</div>
+    <div class="site-footer-tagline">海风酿造的东方甜</div>
+    <div class="site-footer-copy">© 威小果 数智助农</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>助农日记 · 商业向善，授人以渔 · 威海无花果数智助农</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { background:#080e0b; }
+    body::after { content:''; position:fixed; inset:0; background:url('图片2.jpg') center/cover no-repeat; filter:blur(4px) brightness(1.1); transform:scale(1.04); pointer-events:none; z-index:-2; }
+    body::before { content:''; position:fixed; inset:0; background:rgba(10,22,16,0.22); pointer-events:none; z-index:-1; }
+
+    /* ===== Hero ===== */
+    .imp-hero { position:relative; z-index:1; padding:130px 24px 64px; text-align:center; color:#fff; }
+    .imp-hero .badge { display:inline-block; padding:5px 20px; border-radius:100px; background:rgba(62,196,167,0.1); border:1px solid rgba(62,196,167,0.2); font-size:11px; font-weight:600; color:#3ec4a7; margin-bottom:18px; letter-spacing:1.5px; }
+    .imp-hero h1 { font-size:clamp(26px,3.6vw,44px); font-weight:800; margin-bottom:10px; line-height:1.3; }
+    .imp-hero h1 .gr { background:linear-gradient(135deg,#fff 20%,#3ec4a7 55%,#5ee8c5); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .imp-hero .sub { font-size:14px; color:rgba(255,255,255,0.5); margin-bottom:18px; letter-spacing:1px; }
+    .imp-hero .lead { font-size:15px; color:rgba(255,255,255,0.55); max-width:680px; margin:0 auto; line-height:1.9; }
+
+    /* ===== 通用 Section ===== */
+    .imp-section { position:relative; z-index:1; padding:56px 0; color:#fff; }
+    .imp-section .sec-hd { text-align:center; margin-bottom:14px; }
+    .imp-section .sec-hd h2 { font-size:clamp(22px,2.8vw,32px); font-weight:800; color:#fff; }
+    .imp-section .sec-hd .accent { color:#3ec4a7; }
+    .imp-section .sec-sub { text-align:center; font-size:14px; color:rgba(255,255,255,0.4); max-width:660px; margin:0 auto 40px; line-height:1.7; }
+
+    /* ===== 助农模式 ===== */
+    .model-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1100px; margin:0 auto 36px; padding:0 24px; }
+    .model-card { background:rgba(10,20,14,0.72); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:32px 26px 28px; transition:transform .3s,border-color .3s,box-shadow .3s; position:relative; overflow:hidden; }
+    .model-card:hover { transform:translateY(-4px); border-color:rgba(62,196,167,0.2); box-shadow:0 14px 44px rgba(0,0,0,0.2); }
+    .model-card::before { content:''; position:absolute; top:-40px; right:-40px; width:120px; height:120px; border-radius:50%; opacity:0.06; pointer-events:none; }
+    .model-card:nth-child(1)::before { background:#3ec4a7; }
+    .model-card:nth-child(2)::before { background:#f0644a; }
+    .model-card:nth-child(3)::before { background:#5dade2; }
+    .mc-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:16px; }
+    .model-card:nth-child(1) .mc-icon { background:rgba(62,196,167,0.1); }
+    .model-card:nth-child(2) .mc-icon { background:rgba(240,100,74,0.1); }
+    .model-card:nth-child(3) .mc-icon { background:rgba(93,173,226,0.1); }
+    .model-card h3 { font-size:17px; font-weight:700; color:#fff; margin-bottom:8px; }
+    .model-card .mc-highlight { display:inline-block; padding:3px 10px; border-radius:6px; font-size:12px; font-weight:700; margin-bottom:10px; }
+    .model-card:nth-child(1) .mc-highlight { background:rgba(62,196,167,0.1); color:#3ec4a7; }
+    .model-card:nth-child(2) .mc-highlight { background:rgba(240,100,74,0.1); color:#f0644a; }
+    .model-card:nth-child(3) .mc-highlight { background:rgba(93,173,226,0.1); color:#5dade2; }
+    .model-card p { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.8; }
+
+    .cycle-bar { max-width:800px; margin:0 auto; padding:0 24px; text-align:center; }
+    .cycle-flow { display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; }
+    .cycle-node { padding:10px 22px; border-radius:12px; background:rgba(62,196,167,0.08); border:1px solid rgba(62,196,167,0.15); font-size:13px; font-weight:700; color:#5ee8c5; white-space:nowrap; }
+    .cycle-arrow { font-size:18px; color:rgba(62,196,167,0.35); padding:0 4px; }
+
+    /* ===== 数据看板 ===== */
+    .dash-section { background:rgba(10,20,14,0.5); backdrop-filter:blur(12px); border-top:1px solid rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.04); }
+    .stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1100px; margin:0 auto 32px; padding:0 24px; }
+    .stat-card { text-align:center; padding:32px 16px; border-radius:18px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); transition:transform .3s; }
+    .stat-card:hover { transform:translateY(-3px); }
+    .stat-emoji { font-size:28px; margin-bottom:12px; display:block; }
+    .stat-num { font-family:'Outfit',sans-serif; font-size:clamp(32px,4vw,48px); font-weight:800; line-height:1; }
+    .stat-unit { font-size:14px; font-weight:400; opacity:0.6; margin-left:2px; }
+    .stat-label { font-size:12px; color:rgba(255,255,255,0.45); margin-top:10px; line-height:1.5; }
+    .stat-summary { text-align:center; max-width:700px; margin:0 auto; padding:0 24px; }
+    .stat-summary p { font-size:15px; color:rgba(255,255,255,0.5); line-height:1.8; }
+    .stat-summary .hl { color:#5ee8c5; font-weight:700; }
+
+    /* ===== 田间日记时间轴 ===== */
+    .timeline-section { max-width:860px; margin:0 auto; padding:0 24px; }
+    .timeline { position:relative; }
+    .timeline::before { content:''; position:absolute; left:28px; top:0; bottom:0; width:2px; background:rgba(62,196,167,0.12); }
+    .tl-entry { position:relative; padding-left:72px; margin-bottom:36px; }
+    .tl-entry:last-child { margin-bottom:0; }
+    .tl-dot { position:absolute; left:17px; top:6px; width:24px; height:24px; border-radius:50%; background:rgba(62,196,167,0.12); border:2px solid rgba(62,196,167,0.35); display:flex; align-items:center; justify-content:center; font-size:11px; }
+    .tl-card { background:rgba(10,20,14,0.7); backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:28px 26px; transition:transform .3s,border-color .3s; }
+    .tl-card:hover { transform:translateY(-2px); border-color:rgba(62,196,167,0.18); }
+    .tl-date { display:inline-block; padding:3px 12px; border-radius:6px; background:rgba(62,196,167,0.08); color:#3ec4a7; font-size:11px; font-weight:700; margin-bottom:12px; letter-spacing:.5px; }
+    .tl-card h3 { font-size:16px; font-weight:700; color:#fff; margin-bottom:8px; }
+    .tl-card p { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.9; }
+    .tl-card .tl-quote { margin-top:14px; padding:12px 16px; border-radius:10px; background:rgba(255,255,255,0.03); border-left:3px solid rgba(62,196,167,0.3); font-style:italic; font-size:13px; color:rgba(255,255,255,0.55); line-height:1.7; }
+
+    /* ===== CTA ===== */
+    .imp-cta { max-width:900px; margin:0 auto; padding:0 24px; text-align:center; }
+    .cta-box { background:rgba(10,20,14,0.7); backdrop-filter:blur(20px); border:1px solid rgba(62,196,167,0.12); border-radius:24px; padding:48px 40px; }
+    .cta-box h2 { font-size:clamp(22px,2.6vw,30px); font-weight:800; color:#fff; margin-bottom:10px; }
+    .cta-box p { font-size:14px; color:rgba(255,255,255,0.45); line-height:1.8; max-width:560px; margin:0 auto 28px; }
+    .cta-btns { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
+    .cta-btn { padding:13px 30px; border-radius:100px; font-size:14px; font-weight:700; text-decoration:none; transition:transform .2s,box-shadow .2s; }
+    .cta-btn.primary { background:linear-gradient(135deg,#3ec4a7,#2d8a5a); color:#fff; box-shadow:0 6px 28px rgba(62,196,167,0.25); }
+    .cta-btn.secondary { background:rgba(255,255,255,0.08); color:#fff; border:1px solid rgba(255,255,255,0.15); }
+    .cta-btn:hover { transform:translateY(-2px); }
+
+    /* ===== 响应式 ===== */
+    @media(max-width:768px){
+      .model-grid { grid-template-columns:1fr; }
+      .stat-grid { grid-template-columns:1fr 1fr; }
+      .cycle-flow { gap:4px; }
+      .cycle-node { padding:8px 14px; font-size:11px; }
+      .timeline::before { left:18px; }
+      .tl-entry { padding-left:52px; }
+      .tl-dot { left:7px; }
+      .cta-box { padding:36px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="mascot.png" alt="威小果"><span>威海无花果数智助农</span></a>
+    <div class="nav-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html">B端合作</a><a href="impact.html" class="active">助农日记</a><a href="survey.html">调研展示</a></div>
+    <a href="b2b-contact.html" class="nav-cta">申请B端试样</a>
+  </div></nav>
+
+  <!-- ==================== Hero ==================== -->
+  <section class="imp-hero">
+    <div class="badge">RURAL REVITALIZATION · 乡村振兴日记</div>
+    <h1><span class="gr">最好的助农，是构建生生不息的产业生态</span></h1>
+    <p class="sub">威小果的乡村振兴日记 ｜ 记录每一次科技与泥土的拥抱</p>
+    <p class="lead">我们坚信，纯粹的公益难以长久，只有将"商业化盈利"与"产业反哺"深度结合，才能真正改变这片土地。在这里，我们记录下项目团队与威海果农共同成长的每一个瞬间。</p>
+  </section>
+
+  <!-- ==================== 模块一：助农模式 ==================== -->
+  <section class="imp-section">
+    <div class="sec-hd"><h2>告别"靠天吃饭"，用 <span class="accent">数智化重塑价值分配</span></h2></div>
+    <p class="sec-sub">传统模式下，好果子卖不出好价钱，残次果只能烂在地里。我们通过三大举措，彻底打破这一困局。</p>
+
+    <div class="model-grid">
+      <div class="model-card reveal">
+        <div class="mc-icon">📈</div>
+        <h3>订单保收，特级果溢价 20%</h3>
+        <span class="mc-highlight">收入直接拉升</span>
+        <p>建立"订单保收"机制，与核心产区果农签订长期合作协议。对符合标准化种植的特级果，我们以高于市场价 20% 的价格优先收购，直接拉动果农创收，从源头鼓励精细化种植。签约果农不再为销路发愁，安心把精力放在种出好果子上。</p>
+      </div>
+      <div class="model-card reveal">
+        <div class="mc-icon">♻️</div>
+        <h3>兜底收购，资源"零废弃"</h3>
+        <span class="mc-highlight">利用率达 98%</span>
+        <p>鲜果极易损耗？品相不佳的B级果卖不掉？我们统一兜底收购，送往深加工产线转化为琥珀果酱和微醺果酒。甚至连无花果的茎叶，也被我们提取用于功能性茶饮。单位成本降低，资源利用率高达 98%，真正做到"一棵树的全部价值"。</p>
+      </div>
+      <div class="model-card reveal">
+        <div class="mc-icon">💻</div>
+        <h3>技术下乡，数据赋能田间</h3>
+        <span class="mc-highlight">数字农业</span>
+        <p>免费为合作果园接入物联网监测设备。土壤缺水了？该施肥了？传感器第一时间将数据传到果农的手机里，让传统种植变身"数字农业"。科技助农不是喊口号，而是实实在在地把智能工具交到农民手里。</p>
+      </div>
+    </div>
+
+    <div class="cycle-bar reveal">
+      <div class="cycle-flow">
+        <span class="cycle-node">🏪 商业盈利</span><span class="cycle-arrow">→</span>
+        <span class="cycle-node">💰 溢价收购 & 技术反哺</span><span class="cycle-arrow">→</span>
+        <span class="cycle-node">🌾 果农增收 & 品质提升</span><span class="cycle-arrow">→</span>
+        <span class="cycle-node">📈 品牌价值再放大</span><span class="cycle-arrow">→</span>
+        <span class="cycle-node" style="border-color:rgba(62,196,167,0.4);">🔄 良性循环</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 模块二：数据看板 ==================== -->
+  <section class="imp-section dash-section">
+    <div class="sec-hd"><h2>数字里的温度，<span class="accent">看得见的改变</span></h2></div>
+    <p class="sec-sub">通过产品销售、IP授权、文旅体验实现盈利，再将利润反哺农户与产业。</p>
+
+    <div class="stat-grid" id="impact-stats">
+      <div class="stat-card reveal" data-delay="0">
+        <span class="stat-emoji">📈</span>
+        <div class="stat-num" style="color:#3ec4a7;">+<span class="counter" data-target="20">0</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">核心合作户<br>平均收入提升比例</div>
+      </div>
+      <div class="stat-card reveal" data-delay="150">
+        <span class="stat-emoji">♻️</span>
+        <div class="stat-num" style="color:#f0644a;"><span class="counter" data-target="100">0</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">滞销果、残次果<br>深加工转化率</div>
+      </div>
+      <div class="stat-card reveal" data-delay="300">
+        <span class="stat-emoji">🌾</span>
+        <div class="stat-num" style="color:#5dade2;"><span class="counter" data-target="2800">0</span><span class="stat-unit">亩</span></div>
+        <div class="stat-label">辐射带动的<br>数字化标准化果园面积</div>
+      </div>
+      <div class="stat-card reveal" data-delay="450">
+        <span class="stat-emoji">🤝</span>
+        <div class="stat-num" style="color:#a878ff;"><span class="counter" data-target="360">0</span><span class="stat-unit">户</span></div>
+        <div class="stat-label">深度结对帮扶<br>威海本地果农数量</div>
+      </div>
+    </div>
+
+    <div class="stat-summary reveal">
+      <p>盈利 <span class="hl">→</span> 溢价收购与技术反哺 <span class="hl">→</span> 果农增收与品质提升 <span class="hl">→</span> 品牌价值再放大 <span class="hl">→</span> 实现<span class="hl">"赚钱—助农—再发展"</span>的良性循环。</p>
+    </div>
+  </section>
+
+  <!-- ==================== 模块三：田间日记 ==================== -->
+  <section class="imp-section">
+    <div class="sec-hd"><h2>威小果的 <span class="accent">田间巡查簿</span></h2></div>
+    <p class="sec-sub">每一篇日记，都是团队与果农共同书写的产业振兴故事。</p>
+
+    <div class="timeline-section">
+      <div class="timeline">
+
+        <div class="tl-entry reveal">
+          <div class="tl-dot">🍂</div>
+          <div class="tl-card">
+            <span class="tl-date">📝 2025年9月 · 秋收</span>
+            <h3>第一批"数字身份证"贴上了果箱</h3>
+            <p>今天，张大爷家的20亩青皮无花果迎来了丰收。我们帮他把带有溯源二维码的标签一张张贴在冷链箱上。果农们围在冷链车旁，好奇地拿手机扫了扫，看到自己的名字和果园数据出现在屏幕上，笑得合不拢嘴。</p>
+            <div class="tl-quote">张大爷笑着说："种了一辈子树，没想到咱的果子现在也有'户口本'了，城里人扫一扫就知道是我老张种的！"</div>
+          </div>
+        </div>
+
+        <div class="tl-entry reveal">
+          <div class="tl-dot">🌧️</div>
+          <div class="tl-card">
+            <span class="tl-date">📝 2025年11月 · 深加工</span>
+            <h3>品相不好的果子，变成了金灿灿的果酱</h3>
+            <p>往年遇上连阴雨，表皮开裂的果子只能扔掉。今天，我们把收来的5000斤次果送进了无菌车间。经过人工去皮、铜锅熬制，它们变成了高端烘焙店里抢手的无花果酱。包装上印着溯源码，消费者扫一扫就能看到这些果子的"前世今生"。</p>
+            <div class="tl-quote">看着果农拿到了兜底收购的钱，我们觉得一切熬夜研发都值了。王婶接过收购单说："以前下雨就哭，现在下雨也不怕了，果子不会白种。"</div>
+          </div>
+        </div>
+
+        <div class="tl-entry reveal">
+          <div class="tl-dot">🌱</div>
+          <div class="tl-card">
+            <span class="tl-date">📝 2026年3月 · 备耕</span>
+            <h3>给土壤装上"听诊器"</h3>
+            <p>春季复苏，团队的技术员带着物联网设备下了地。我们把温湿度传感器插进土里，教果农用手机小程序看数据。老李刚开始还不会用智能手机，我们的技术员手把手教了一下午。现在老李每天早上第一件事就是打开App看"果园体检报告"。</p>
+            <div class="tl-quote">科技助农不是喊口号，而是实实在在地把智能工具交到农民手里。老李说："这个比天气预报管用多了！"</div>
+          </div>
+        </div>
+
+        <div class="tl-entry reveal">
+          <div class="tl-dot">☀️</div>
+          <div class="tl-card">
+            <span class="tl-date">📝 2026年6月 · 盛夏</span>
+            <h3>第一批"威小果"联名果酒下线</h3>
+            <p>经过三个月的酿造与橡木桶熟成，第一批"醴泉天酿"微醺无花果酒正式下线。酒标上印着"威小果"的Q版形象和每瓶酒对应的原料溯源信息。我们带着样品去威海的餐厅推介，老板们品尝后纷纷下了订单。</p>
+            <div class="tl-quote">果农老陈看到自己种的果子变成了精美的果酒，激动地说："我种了三十年无花果，头一回觉得这果子是真值钱。"</div>
+          </div>
+        </div>
+
+        <div class="tl-entry reveal">
+          <div class="tl-dot">🎄</div>
+          <div class="tl-card">
+            <span class="tl-date">📝 2026年12月 · 年终</span>
+            <h3>合作果农年收入增长报告出炉</h3>
+            <p>年终盘点，核心合作区360户果农的平均收入较上年增长超过20%。其中，参与标准化种植的特级果农户收入增幅最高达35%。深加工产线全年消化次果超120万斤，果农再无"卖不出去"的担忧。物联网覆盖面积已拓展到2800亩。</p>
+            <div class="tl-quote">在年终座谈会上，果农代表孙大姐说："以前是我们求着收购商，现在是他们排队来找我们要果子。这个项目是真的好！"</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 底部 CTA ==================== -->
+  <section class="imp-section">
+    <div class="imp-cta">
+      <div class="cta-box reveal">
+        <h2>见证改变，参与共建</h2>
+        <p>威海无花果的产业升级之路才刚刚开始。无论是购买一份带有溯源标签的甜蜜，还是成为我们的 B 端合作伙伴，您的每一次支持，都在为乡村振兴注入力量。</p>
+        <div class="cta-btns">
+          <a href="products.html" class="cta-btn primary">去"高能产品仓"支持果农</a>
+          <a href="b2b-contact.html" class="cta-btn secondary">加入我们，成为乡村振兴合伙人</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer"><div class="footer-brand">威小果</div><div class="footer-tagline">"果"色天香 · 数智IP驱动无花果全链增值</div><div class="footer-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div><div class="footer-copy">© 2026 威小果 · 威海无花果数智助农项目</div></footer>
+
+  <!-- ==================== 浮动吉祥物 & 聊天 ==================== -->
+  <div class="mascot-wrap" id="mascot-wrap" title="点击和威小果聊天"><div class="mascot-el" id="mascot-el"><div class="mascot-inner"><img src="mascot.png" alt="威小果"></div></div></div>
+  <div class="chat-panel" id="chat-panel"><div class="chat-hd"><h3>和威小果聊天</h3><button class="chat-close" id="chat-close">×</button></div><div class="chat-msgs" id="chat-msgs"></div><div class="chat-input-wrap"><input type="text" class="chat-input" id="chat-input" placeholder="输入消息..." maxlength="200" autocomplete="off"><button class="chat-send" id="chat-send">➤</button></div></div>
+
+  <script src="chat.js"></script>
+  <script>
+  (function(){
+    var sw = document.getElementById('impact-stats'), ct = false;
+
+    function animC(el){
+      var tgt = parseInt(el.getAttribute('data-target')), st = null;
+      function step(ts){
+        if(!st) st = ts;
+        var p = Math.min((ts - st) / 1800, 1);
+        el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * tgt);
+        if(p < 1) requestAnimationFrame(step); else el.textContent = tgt;
+      }
+      requestAnimationFrame(step);
+    }
+
+    if(sw){
+      new IntersectionObserver(function(e){
+        e.forEach(function(en){
+          if(en.isIntersecting && !ct){
+            ct = true;
+            sw.querySelectorAll('.stat-card').forEach(function(c){
+              var d = parseInt(c.getAttribute('data-delay')) || 0;
+              setTimeout(function(){
+                c.classList.add('visible');
+                var cn = c.querySelector('.counter');
+                if(cn) animC(cn);
+              }, d);
+            });
+          }
+        });
+      }, {threshold: 0.2}).observe(sw);
+    }
+
+    var obs = new IntersectionObserver(function(e){
+      e.forEach(function(en){ if(en.isIntersecting) en.target.classList.add('visible'); });
+    }, {threshold: 0.1});
+    document.querySelectorAll('.reveal:not(.stat-card)').forEach(function(el, i){
+      el.style.transitionDelay = (i % 6) * 0.06 + 's';
+      obs.observe(el);
+    });
+
+    lucide.createIcons();
+  })();
+  </script>
+</body>
+</html>

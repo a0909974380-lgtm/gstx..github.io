@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>企业集采与定制 · B端合作 · 威海无花果数智助农</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="b2b-common.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .corp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:1100px; margin:0 auto 56px; padding:0 24px; }
+    .gift-showcase { max-width:1100px; margin:0 auto 56px; padding:0 24px; }
+    .gift-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .gift-item { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:24px 20px; text-align:center; transition:transform .3s,border-color .3s; }
+    .gift-item:hover { transform:translateY(-3px); border-color:rgba(62,196,167,0.2); }
+    .gift-item .gi-emoji { font-size:36px; margin-bottom:10px; }
+    .gift-item h4 { font-size:14px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .gift-item p { font-size:12px; color:rgba(255,255,255,0.45); line-height:1.6; }
+    .gift-item .gi-price { font-size:14px; font-weight:700; color:#f0644a; margin-top:8px; font-family:'Outfit',sans-serif; }
+
+    .scene-section { max-width:1100px; margin:0 auto 56px; padding:0 24px; }
+    .scene-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .scene-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:24px 22px; transition:transform .3s; }
+    .scene-card:hover { transform:translateY(-3px); }
+    .scene-card .sc-emoji { font-size:28px; margin-bottom:10px; }
+    .scene-card h4 { font-size:15px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .scene-card p { font-size:12.5px; color:rgba(255,255,255,0.5); line-height:1.7; }
+    .scene-card .sc-tag { display:inline-block; margin-top:10px; padding:3px 10px; border-radius:6px; font-size:10px; font-weight:600; background:rgba(62,196,167,0.1); color:#3ec4a7; }
+
+    .flow-section { max-width:900px; margin:0 auto 56px; padding:0 24px; }
+    .flow-steps { display:flex; gap:0; position:relative; }
+    .flow-steps::before { content:''; position:absolute; top:28px; left:40px; right:40px; height:2px; background:rgba(62,196,167,0.15); z-index:0; }
+    .flow-step { flex:1; text-align:center; position:relative; z-index:1; }
+    .flow-dot { width:56px; height:56px; border-radius:50%; background:rgba(62,196,167,0.1); border:2px solid rgba(62,196,167,0.3); display:flex; align-items:center; justify-content:center; font-size:22px; margin:0 auto 12px; }
+    .flow-step h4 { font-size:13px; font-weight:700; color:#fff; margin-bottom:4px; }
+    .flow-step p { font-size:11px; color:rgba(255,255,255,0.35); line-height:1.5; padding:0 8px; }
+
+    .tier-section { max-width:1100px; margin:0 auto; padding:0 24px; }
+    .tier-table { width:100%; border-collapse:separate; border-spacing:0; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); }
+    .tier-table th { padding:14px 20px; background:rgba(62,196,167,0.08); color:#3ec4a7; font-size:13px; font-weight:700; text-align:left; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .tier-table td { padding:12px 20px; font-size:13px; color:rgba(255,255,255,0.6); border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(10,20,14,0.5); }
+    .tier-table tr:last-child td { border-bottom:none; }
+    .tier-table .tier-highlight { color:#5ee8c5; font-weight:600; }
+
+    @media(max-width:768px){
+      .corp-grid,.scene-grid { grid-template-columns:1fr; }
+      .gift-grid { grid-template-columns:1fr 1fr; }
+      .flow-steps { flex-direction:column; gap:16px; }
+      .flow-steps::before { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="mascot.png" alt="威小果"><span>威海无花果数智助农</span></a>
+    <div class="nav-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html" class="active">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div>
+    <a href="b2b-contact.html" class="nav-cta">申请B端试样</a>
+  </div></nav>
+
+  <div class="b2b-sub-nav"><div class="b2b-sub-nav-inner">
+    <a href="b2b.html">餐饮茶饮</a><a href="b2b-corp.html" class="active">企业集采</a><a href="b2b-platform.html">数智平台</a><a href="b2b-ip.html">IP联名</a><a href="b2b-contact.html">合作咨询</a>
+  </div></div>
+
+  <section class="b2b-page">
+    <div class="sec-hd"><h2>高品质商务伴手礼与 <span class="accent">员工福利定制</span></h2></div>
+    <p class="sec-sub">告别千篇一律的传统礼品，用"威海地标农产品 + 国潮IP"彰显企业的独特品味与助农社会责任（ESG）。</p>
+
+    <!-- 三大核心能力 -->
+    <div class="corp-grid">
+      <div class="glass-card reveal"><span class="gc-icon">🎁</span><h3>协议定价与阶梯折扣</h3><p>签订年度福利采购协议，即可享受 <span class="highlight">基础价 8 折起</span> 等大宗采购优惠。量越大、折扣越深，专属客户经理全程对接。</p></div>
+      <div class="glass-card reveal"><span class="gc-icon">🎨</span><h3>深度外观定制</h3><p>提供礼盒 <span class="highlight">烫金 LOGO 定制</span>、企业专属"威小果"IP 形象设计服务，让每一份礼物都成为品牌传播载体。</p></div>
+      <div class="glass-card reveal"><span class="gc-icon">🤱</span><h3>细分人群开发</h3><p>针对 <span class="highlight">母婴渠道</span> 等特殊场景，支持辅食定制套装开发，动态调整健康配方比例。</p></div>
+    </div>
+
+    <!-- 礼盒方案展示 -->
+    <div class="gift-showcase">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>热门礼盒 <span class="accent">方案</span></h2></div>
+      <div class="gift-grid">
+        <div class="gift-item reveal"><div class="gi-emoji">🎀</div><h4>中秋尊享礼盒</h4><p>果酒+果酱+文创三件套，烫金企业LOGO，匠心呈现助农心意</p><div class="gi-price">¥298 起/盒</div></div>
+        <div class="gift-item reveal"><div class="gi-emoji">🏢</div><h4>年会员工福利套装</h4><p>果干+果茶+IP手办，50件起订，支持个性化贺卡夹寄</p><div class="gi-price">¥168 起/套</div></div>
+        <div class="gift-item reveal"><div class="gi-emoji">🤝</div><h4>客户拜访伴手礼</h4><p>精选鲜果+果酱双拼，冷链配送，彰显品味与社会责任</p><div class="gi-price">¥228 起/份</div></div>
+        <div class="gift-item reveal"><div class="gi-emoji">👶</div><h4>母婴关怀套装</h4><p>无添加果泥辅食+有机果干，通过母婴级安全认证</p><div class="gi-price">¥138 起/套</div></div>
+      </div>
+    </div>
+
+    <!-- 阶梯报价表 -->
+    <div class="tier-section" style="margin-bottom:56px;">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>阶梯 <span class="accent">报价方案</span></h2></div>
+      <table class="tier-table reveal">
+        <tr><th>采购数量</th><th>折扣力度</th><th>增值服务</th><th>交付周期</th></tr>
+        <tr><td>50 - 199 件</td><td class="tier-highlight">9 折</td><td>免费打样 + 基础LOGO定制</td><td>7-10 个工作日</td></tr>
+        <tr><td>200 - 499 件</td><td class="tier-highlight">8.5 折</td><td>专属设计师 + 烫金定制</td><td>5-7 个工作日</td></tr>
+        <tr><td>500 - 999 件</td><td class="tier-highlight">8 折</td><td>IP形象定制 + 贺卡夹寄</td><td>5 个工作日</td></tr>
+        <tr><td>1000 件以上</td><td class="tier-highlight">7.5 折起</td><td>全套VI定制 + 专属客户经理</td><td>协商定制</td></tr>
+      </table>
+    </div>
+
+    <!-- 典型客户场景 -->
+    <div class="scene-section">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>典型客户 <span class="accent">应用场景</span></h2></div>
+      <div class="scene-grid">
+        <div class="scene-card reveal"><div class="sc-emoji">🏦</div><h4>金融/银行</h4><p>为高净值客户定制专属果酒礼盒，配合数字溯源体验，提升VIP客户满意度。多家银行已选用作为理财客户年终回馈礼。</p><span class="sc-tag">客户维护</span></div>
+        <div class="scene-card reveal"><div class="sc-emoji">💻</div><h4>互联网/科技</h4><p>年会伴手礼、新员工入职礼盒、团建定制。IP潮玩属性深受年轻团队喜爱，增强企业文化认同感。</p><span class="sc-tag">员工福利</span></div>
+        <div class="scene-card reveal"><div class="sc-emoji">🏨</div><h4>酒店/文旅</h4><p>入住欢迎果篮、会议茶歇定制果饮、景区联名文创。借助威海地标农产品，强化在地文化体验。</p><span class="sc-tag">文旅联名</span></div>
+        <div class="scene-card reveal"><div class="sc-emoji">🏥</div><h4>医疗/健康</h4><p>为体检中心、月子中心定制健康礼包。无花果富含膳食纤维与氨基酸，契合健康消费趋势。</p><span class="sc-tag">健康关怀</span></div>
+        <div class="scene-card reveal"><div class="sc-emoji">🎓</div><h4>教育/公益</h4><p>助农主题研学活动伴手礼、公益活动定制。彰显企业ESG理念，每一份采购都是对产业振兴的支持。</p><span class="sc-tag">ESG助农</span></div>
+        <div class="scene-card reveal"><div class="sc-emoji">🏗️</div><h4>地产/物业</h4><p>业主节日礼品、样板间体验品、社区活动定制。差异化的地标农品礼盒提升业主满意度与品牌温度。</p><span class="sc-tag">社区维系</span></div>
+      </div>
+    </div>
+
+    <!-- 合作流程 -->
+    <div class="flow-section">
+      <div class="sec-hd" style="margin-bottom:32px;"><h2>合作 <span class="accent">流程</span></h2></div>
+      <div class="flow-steps reveal">
+        <div class="flow-step"><div class="flow-dot">📋</div><h4>提交需求</h4><p>填写合作表单<br>说明场景与数量</p></div>
+        <div class="flow-step"><div class="flow-dot">🎨</div><h4>方案设计</h4><p>专属设计师<br>48h出定制方案</p></div>
+        <div class="flow-step"><div class="flow-dot">📦</div><h4>免费打样</h4><p>寄送实物样品<br>确认品质满意</p></div>
+        <div class="flow-step"><div class="flow-dot">✅</div><h4>签约下单</h4><p>锁定专属价格<br>启动批量生产</p></div>
+        <div class="flow-step"><div class="flow-dot">🚚</div><h4>交付验收</h4><p>冷链/物流配送<br>售后持续跟进</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="footer-brand">威小果</div><div class="footer-tagline">"果"色天香 · 数智IP驱动无花果全链增值</div><div class="footer-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div><div class="footer-copy">© 2026 威小果 · 威海无花果数智助农项目</div></footer>
+  <div class="mascot-wrap" id="mascot-wrap" title="点击和威小果聊天"><div class="mascot-el" id="mascot-el"><div class="mascot-inner"><img src="mascot.png" alt="威小果"></div></div></div>
+  <div class="chat-panel" id="chat-panel"><div class="chat-hd"><h3>和威小果聊天</h3><button class="chat-close" id="chat-close">×</button></div><div class="chat-msgs" id="chat-msgs"></div><div class="chat-input-wrap"><input type="text" class="chat-input" id="chat-input" placeholder="输入消息..." maxlength="200" autocomplete="off"><button class="chat-send" id="chat-send">➤</button></div></div>
+  <script src="chat.js"></script>
+  <script>(function(){var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.1});document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%6)*.06+'s';obs.observe(el);});lucide.createIcons();})();</script>
+</body>
+</html>

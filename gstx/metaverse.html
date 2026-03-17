@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>无花果屿 · 元宇宙 · 威海无花果数智助农</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="tech-common.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* ===== 页面背景覆盖 ===== */
+
+    /* ===== Hero ===== */
+    .mv-hero { padding: 100px 0 20px; text-align: center; color: #fff; position: relative; z-index: 1; }
+    .mv-hero .badge { display: inline-block; padding: 5px 18px; border-radius: 100px; background: rgba(168,120,255,0.12); border: 1px solid rgba(168,120,255,0.25); font-size: 12px; font-weight: 600; color: #c9a0ff; margin-bottom: 16px; letter-spacing: 1px; }
+    .mv-hero h1 { font-size: clamp(28px, 3.5vw, 46px); font-weight: 800; margin-bottom: 12px; line-height: 1.25; }
+    .mv-hero h1 .gr { background: linear-gradient(135deg, #3ec4a7, #a878ff, #f0a0c0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .mv-hero .sub { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 16px; line-height: 1.7; }
+
+    /* 世界观介绍 */
+    .mv-worldview { max-width: 860px; margin: 0 auto 28px; background: rgba(168,120,255,0.04); backdrop-filter: blur(14px); border: 1px solid rgba(168,120,255,0.1); border-radius: 20px; padding: 24px 32px; text-align: left; position: relative; z-index: 1; overflow: hidden; }
+    .mv-worldview::before { content: ''; position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(168,120,255,0.08), transparent 70%); pointer-events: none; }
+    .mv-worldview p { font-size: 14.5px; color: rgba(255,255,255,0.8); line-height: 1.9; }
+    .mv-worldview strong { color: rgba(255,255,255,0.9); }
+    .mv-worldview .hl { color: #a878ff; font-weight: 700; }
+
+    /* ===== 3D 浮岛可视化 ===== */
+    .island-section { position: relative; z-index: 1; padding: 0 0 56px; }
+    .island-wrap { max-width: 900px; margin: 0 auto; position: relative; }
+    .island-svg { width: 100%; height: auto; }
+    .island-hotspot { position: absolute; cursor: pointer; }
+    .hotspot-ring { width: 48px; height: 48px; border-radius: 50%; background: rgba(168,120,255,0.12); border: 2px solid rgba(168,120,255,0.35); display: flex; align-items: center; justify-content: center; font-size: 22px; animation: hotspotPulse 2.5s ease-in-out infinite; transition: transform 0.3s, background 0.3s; }
+    .hotspot-ring:hover { transform: scale(1.15); background: rgba(168,120,255,0.2); }
+    @keyframes hotspotPulse { 0%,100%{box-shadow:0 0 0 0 rgba(168,120,255,0.3)} 50%{box-shadow:0 0 0 14px rgba(168,120,255,0)} }
+    .hotspot-label { position: absolute; top: 54px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.8); text-align: center; }
+    .island-base { fill: url(#islandGrad); filter: drop-shadow(0 20px 50px rgba(0,0,0,0.3)); }
+    .island-tree { fill: #2d8a5a; }
+    .island-tree-light { fill: #3ec4a7; }
+    .island-cloud { fill: rgba(255,255,255,0.06); animation: cloudDrift 12s linear infinite; }
+    @keyframes cloudDrift { 0%{transform:translateX(0)} 100%{transform:translateX(40px)} }
+
+    /* ===== 三大玩法 ===== */
+    .gameplay-section { position: relative; z-index: 1; padding: 0 0 56px; }
+    .gameplay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    .gp-card { background: rgba(10,20,14,0.7); backdrop-filter:blur(16px); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 0; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; cursor: default; display: flex; flex-direction: column; }
+    .gp-card-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .gp-card-body { padding: 24px 26px 28px; }
+    .gp-card:hover { transform: translateY(-4px); border-color: rgba(168,120,255,0.25); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+    .gp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 20px 20px 0 0; }
+    .gp-card:nth-child(1)::before { background: linear-gradient(90deg, #3ec4a7, #2d8a5a); }
+    .gp-card:nth-child(2)::before { background: linear-gradient(90deg, #a878ff, #7c4dff); }
+    .gp-card:nth-child(3)::before { background: linear-gradient(90deg, #5dade2, #3498db); }
+    .gp-icon { font-size: 40px; margin-bottom: 16px; }
+    .gp-tag { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 14px; }
+    .gp-card:nth-child(1) .gp-tag { background: rgba(62,196,167,0.1); color: #3ec4a7; }
+    .gp-card:nth-child(2) .gp-tag { background: rgba(168,120,255,0.1); color: #a878ff; }
+    .gp-card:nth-child(3) .gp-tag { background: rgba(93,173,226,0.1); color: #5dade2; }
+    .gp-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .gp-card .gp-desc { font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.75; margin-bottom: 16px; }
+    .gp-target { display: flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); }
+    .gp-target i { width: 14px; height: 14px; color: rgba(255,255,255,0.3); }
+    .gp-target span { font-size: 11px; color: rgba(255,255,255,0.35); }
+
+    /* ===== O2O 积分兑换 ===== */
+    .o2o-section { position: relative; z-index: 1; padding: 0 0 56px; }
+    .o2o-wrap { max-width: 1100px; margin: 0 auto; }
+    .o2o-header { text-align: center; margin-bottom: 36px; }
+    .o2o-header h2 { font-size: clamp(22px, 2.8vw, 32px); font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .o2o-header p { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+    .o2o-flow { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 36px; flex-wrap: wrap; }
+    .o2o-step { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 100px; background: rgba(168,120,255,0.06); border: 1px solid rgba(168,120,255,0.12); }
+    .o2o-step-icon { font-size: 18px; }
+    .o2o-step-text { font-size: 12px; color: rgba(255,255,255,0.8); font-weight: 600; }
+    .o2o-arrow { color: rgba(255,255,255,0.15); font-size: 18px; }
+    .o2o-rewards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .o2o-reward { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 28px 24px; text-align: center; transition: transform 0.3s, border-color 0.3s; }
+    .o2o-reward:hover { transform: translateY(-3px); border-color: rgba(168,120,255,0.2); }
+    .o2o-reward-icon { font-size: 36px; margin-bottom: 12px; }
+    .o2o-reward-points { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 12px; }
+    .o2o-reward:nth-child(1) .o2o-reward-points { background: rgba(62,196,167,0.12); color: #3ec4a7; }
+    .o2o-reward:nth-child(2) .o2o-reward-points { background: rgba(93,173,226,0.12); color: #5dade2; }
+    .o2o-reward:nth-child(3) .o2o-reward-points { background: rgba(240,160,192,0.12); color: #f0a0c0; }
+    .o2o-reward h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .o2o-reward p { font-size: 12.5px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    /* CTA */
+    .mv-cta { text-align: center; padding: 0 0 56px; position: relative; z-index: 1; }
+    .mv-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 36px; border-radius: 100px; background: linear-gradient(135deg, #3ec4a7, #a878ff); color: #fff; font-size: 15px; font-weight: 700; font-family: var(--font); border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 24px rgba(168,120,255,0.25); }
+    .mv-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(168,120,255,0.35); }
+    .mv-cta-sub { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 12px; }
+
+    @media (max-width: 768px) {
+      .gameplay-grid { grid-template-columns: 1fr; }
+      .o2o-rewards { grid-template-columns: 1fr; }
+      .o2o-flow { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="mascot.png" alt="威小果"><span>威海无花果数智助农</span></a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="tech.html" class="active">产品亮点</a>
+        <a href="products.html">高能产品仓</a>
+        <a href="b2b.html">B端合作</a>
+        <a href="impact.html">助农日记</a>
+        <a href="survey.html">调研展示</a>
+      </div>
+      <a href="b2b.html" class="nav-cta">申请B端试样</a>
+    </div>
+  </nav>
+
+  <div class="sub-nav">
+    <div class="sub-nav-inner">
+      <a href="tech.html">全生命周期溯源</a>
+      <a href="tech-cold.html">冷链温控上链</a>
+      <a href="tech-twin.html">数字孪生加工</a>
+      <a href="metaverse.html" class="active">元宇宙</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="mv-hero">
+    <div class="badge">MR · MIXED REALITY · 混合现实文旅</div>
+    <h1><span class="gr">虚实共生，开启你的寻甜奇遇</span></h1>
+    <p class="sub">首个以无花果为主题的 MR 混合现实文旅互动空间——登录「无花果屿」，在虚拟与现实的交汇处，发现甜蜜新世界。</p>
+  </section>
+
+  <!-- 世界观 -->
+  <div class="mv-worldview reveal">
+    <p>欢迎登录「<span class="hl">无花果屿</span>」——这是一座漂浮于黄海之上、世代以"守护甜度"为使命的幻想数字岛屿。我们打破传统农业与文旅的边界，将威海真实的无花果园 <strong>1:1 映射至虚拟宇宙</strong>。在这里，每一阵海风、每一颗果实，都与现实世界产生着奇妙的共振。</p>
+  </div>
+
+  <!-- 3D 浮岛可视化 -->
+  <section class="island-section">
+    <div class="container">
+      <div class="island-wrap">
+        <svg class="island-svg" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="islandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#3ec4a7;stop-opacity:0.6"/>
+              <stop offset="50%" style="stop-color:#2d8a5a;stop-opacity:0.8"/>
+              <stop offset="100%" style="stop-color:#1a5a3a;stop-opacity:0.9"/>
+            </linearGradient>
+            <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#5dade2;stop-opacity:0.15"/>
+              <stop offset="50%" style="stop-color:#3ec4a7;stop-opacity:0.2"/>
+              <stop offset="100%" style="stop-color:#a878ff;stop-opacity:0.1"/>
+            </linearGradient>
+            <filter id="islandShadow"><feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="rgba(0,0,0,0.25)"/></filter>
+          </defs>
+          <ellipse cx="400" cy="340" rx="380" ry="60" fill="url(#waterGrad)" opacity="0.5"/>
+          <ellipse cx="400" cy="340" rx="320" ry="40" fill="rgba(62,196,167,0.08)">
+            <animate attributeName="rx" values="320;340;320" dur="4s" repeatCount="indefinite"/>
+          </ellipse>
+          <path d="M140,260 Q200,200 300,210 Q350,180 400,190 Q500,170 560,200 Q640,210 680,250 Q700,280 680,310 Q640,340 560,350 Q480,360 400,355 Q300,360 220,345 Q150,330 130,300 Q120,280 140,260Z" class="island-base" filter="url(#islandShadow)"/>
+          <path d="M200,340 Q250,380 350,390 Q450,400 550,385 Q620,370 660,340 Q640,360 550,375 Q440,390 320,385 Q230,375 200,340Z" fill="rgba(100,70,40,0.3)"/>
+          <ellipse cx="350" cy="250" rx="100" ry="30" fill="rgba(62,196,167,0.15)"/>
+          <ellipse cx="500" cy="240" rx="80" ry="25" fill="rgba(62,196,167,0.1)"/>
+          <circle cx="240" cy="230" r="22" class="island-tree"/><circle cx="240" cy="215" r="18" class="island-tree-light"/><rect x="237" y="235" width="6" height="20" rx="2" fill="#5a3a20"/>
+          <circle cx="320" cy="210" r="26" class="island-tree"/><circle cx="318" cy="193" r="20" class="island-tree-light"/><rect x="316" y="218" width="7" height="22" rx="2" fill="#5a3a20"/>
+          <circle cx="540" cy="210" r="20" class="island-tree"/><circle cx="542" cy="196" r="16" class="island-tree-light"/><rect x="538" y="215" width="6" height="18" rx="2" fill="#5a3a20"/>
+          <circle cx="620" cy="235" r="18" class="island-tree"/><circle cx="618" cy="222" r="14" class="island-tree-light"/><rect x="616" y="238" width="5" height="16" rx="2" fill="#5a3a20"/>
+          <rect x="380" y="215" width="40" height="30" rx="3" fill="rgba(255,220,180,0.6)"/>
+          <polygon points="380,215 400,195 420,215" fill="rgba(200,100,60,0.5)"/>
+          <rect x="394" y="230" width="12" height="15" rx="1" fill="rgba(139,90,60,0.5)"/>
+          <path d="M300,260 Q350,250 400,248 Q450,250 520,255" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4" stroke-dasharray="6 4"/>
+          <path d="M480,230 Q490,260 495,290 Q500,320 510,350" fill="none" stroke="rgba(93,173,226,0.25)" stroke-width="3"/>
+          <path d="M482,230 Q492,260 497,290 Q502,320 512,350" fill="none" stroke="rgba(93,173,226,0.15)" stroke-width="5"/>
+          <g class="island-cloud"><ellipse cx="180" cy="140" rx="50" ry="15"/><ellipse cx="200" cy="132" rx="35" ry="12"/></g>
+          <g class="island-cloud" style="animation-delay:-5s;"><ellipse cx="580" cy="120" rx="45" ry="14"/><ellipse cx="605" cy="113" rx="30" ry="10"/></g>
+        </svg>
+        <div class="island-hotspot" style="left:22%;top:42%;" id="hs-workshop">
+          <div class="hotspot-ring">🛠️</div>
+          <div class="hotspot-label">青皮工坊</div>
+        </div>
+        <div class="island-hotspot" style="left:48%;top:35%;" id="hs-maze">
+          <div class="hotspot-ring">🧩</div>
+          <div class="hotspot-label">甜度迷宫</div>
+        </div>
+        <div class="island-hotspot" style="left:72%;top:45%;" id="hs-drift">
+          <div class="hotspot-ring">🌊</div>
+          <div class="hotspot-label">果酿漂流</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三大玩法 -->
+  <section class="gameplay-section">
+    <div class="container">
+      <div class="gameplay-grid">
+        <div class="gp-card reveal" id="card-workshop">
+          <img class="gp-card-img" src="yyz3.png" alt="青皮工坊">
+          <div class="gp-card-body">
+            <div class="gp-tag">沉浸式 MR 体验</div>
+            <h3>青皮工坊</h3>
+            <p class="gp-desc">不再只是旁观者！在虚拟工坊中化身果农，体验从翻土、播种、灌溉到无花果酒古法酿造的完整链路。你的每一次在线浇水，都可能触发线下果园的真实喷淋。</p>
+            <div class="gp-target"><i data-lucide="users"></i><span>新锐中产 · 田园牧歌解压体验</span></div>
+          </div>
+        </div>
+        <div class="gp-card reveal" id="card-maze">
+          <img class="gp-card-img" src="yyz1.png" alt="甜度迷宫">
+          <div class="gp-card-body">
+            <div class="gp-tag">亲子寻宝探险</div>
+            <h3>甜度迷宫</h3>
+            <p class="gp-desc">迷失在粉紫色的水晶果林中！穿梭于错综复杂的"甜度迷宫"，寻找隐藏的"甜度钥匙"与威小果彩蛋，解锁不同风味的数字徽章。</p>
+            <div class="gp-target"><i data-lucide="baby"></i><span>亲子家庭客群 · 趣味品牌互动</span></div>
+          </div>
+        </div>
+        <div class="gp-card reveal" id="card-drift">
+          <img class="gp-card-img" src="yyz1.png" alt="果酿漂流" style="object-position: center bottom;">
+          <div class="gp-card-body">
+            <div class="gp-tag">虚拟社交收集</div>
+            <h3>果酿漂流</h3>
+            <p class="gp-desc">在穿岛而过的清澈溪流中，收集顺流而下的"甜果碎片"。与其他登岛的玩家交换碎片，合成限定版虚拟道具。</p>
+            <div class="gp-target"><i data-lucide="sparkles"></i><span>Z世代 · 收集癖与轻社交</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O2O 积分兑换 -->
+  <section class="o2o-section">
+    <div class="container">
+      <div class="o2o-wrap">
+        <div class="o2o-header">
+          <h2>玩转无花果屿，兑换现实甜蜜</h2>
+          <p>虚拟世界的努力，现实世界来买单！您在「无花果屿」中积累的每一个"甜度积分"，都可以在线上商城或线下体验店直接兑换。</p>
+        </div>
+        <div class="o2o-flow reveal">
+          <div class="o2o-step"><span class="o2o-step-icon">🎮</span><span class="o2o-step-text">岛内互动赚积分</span></div>
+          <span class="o2o-arrow">→</span>
+          <div class="o2o-step"><span class="o2o-step-icon">💎</span><span class="o2o-step-text">甜度积分自动累计</span></div>
+          <span class="o2o-arrow">→</span>
+          <div class="o2o-step"><span class="o2o-step-icon">🎁</span><span class="o2o-step-text">兑换现实权益</span></div>
+        </div>
+        <div class="o2o-rewards">
+          <div class="o2o-reward reveal">
+            <div class="o2o-reward-icon">🎟️</div>
+            <div class="o2o-reward-points">1000 甜度积分</div>
+            <h4>周末亲子采摘券</h4>
+            <p>威海线下真实果园一日采摘体验，含亲子 DIY 果酱课一节。</p>
+          </div>
+          <div class="o2o-reward reveal">
+            <div class="o2o-reward-icon">🍹</div>
+            <div class="o2o-reward-points">500 甜度积分</div>
+            <h4>海盐无花果特饮</h4>
+            <p>合作门店出示积分码即可兑换，限定口味每季更新。</p>
+          </div>
+          <div class="o2o-reward reveal">
+            <div class="o2o-reward-icon">🎁</div>
+            <div class="o2o-reward-points">稀有掉落 · 集齐拼图</div>
+            <h4>限定实体盲盒</h4>
+            <p>集齐 12 块甜度拼图即可召唤限量版"威小果"定制手办。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="mv-cta">
+    <button class="mv-cta-btn" onclick="window.open('b2b.html')">🏝️ 申请「无花果屿」内测资格</button>
+    <div class="mv-cta-sub">首批 500 名内测玩家将获赠 2000 甜度积分 + 限定数字徽章</div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-brand">威小果</div>
+    <div class="footer-tagline">"果"色天香 · 数智IP驱动无花果全链增值</div>
+    <div class="footer-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div>
+    <div class="footer-copy">© 2026 威小果 · 威海无花果数智助农项目 · All Rights Reserved</div>
+  </footer>
+
+  <div class="mascot-wrap" id="mascot-wrap" title="点击和威小果聊天"><div class="mascot-el" id="mascot-el"><div class="mascot-inner"><img src="mascot.png" alt="威小果"></div></div></div>
+  <div class="chat-panel" id="chat-panel">
+    <div class="chat-hd"><h3>和威小果聊天</h3><button class="chat-close" id="chat-close">×</button></div>
+    <div class="chat-msgs" id="chat-msgs"></div>
+    <div class="chat-input-wrap"><input type="text" class="chat-input" id="chat-input" placeholder="输入消息..." maxlength="200" autocomplete="off"><button class="chat-send" id="chat-send">➤</button></div>
+  </div>
+
+  <script src="chat.js"></script>
+  <script>
+  (function(){
+    var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(function(c){obs.observe(c)});
+
+    var hotspots={
+      'hs-workshop':'card-workshop',
+      'hs-maze':'card-maze',
+      'hs-drift':'card-drift'
+    };
+    Object.keys(hotspots).forEach(function(hsId){
+      var hs=document.getElementById(hsId);
+      if(!hs)return;
+      hs.addEventListener('click',function(){
+        var card=document.getElementById(hotspots[hsId]);
+        if(card){
+          card.style.borderColor='rgba(168,120,255,0.5)';
+          card.style.boxShadow='0 0 30px rgba(168,120,255,0.15)';
+          card.scrollIntoView({behavior:'smooth',block:'center'});
+          setTimeout(function(){card.style.borderColor='';card.style.boxShadow='';},2000);
+        }
+      });
+    });
+    lucide.createIcons();
+  })();
+  </script>
+</body>
+</html>

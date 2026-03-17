@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"果"色天香 · 威海无花果数智助农</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { background: url('图片1.png') center/cover no-repeat fixed; }
+    body::before { content:''; position:fixed; inset:0; background:rgba(22,40,30,0.45); pointer-events:none; z-index:0; }
+
+    .home-hero, .mod-problem, .mod-solution, .bottom-bar { position: relative; z-index: 1; }
+
+    /* ===== Hero ===== */
+    .home-hero { display:flex; flex-direction:column; }
+    .hero-main { display:flex; align-items:center; justify-content:center; padding:110px 24px 40px; }
+    .hero-content { text-align:center; max-width:960px; width:100%; display:flex; flex-direction:column; align-items:center; }
+    .hero-mascot-top { margin-bottom:14px; }
+    .hero-mascot-top img { width:110px; height:110px; border-radius:50%; object-fit:cover; box-shadow:0 8px 32px rgba(0,0,0,0.25), 0 0 0 4px rgba(255,255,255,0.2); animation:mascotFloat 3s ease-in-out infinite; background:rgba(200,240,216,0.3); }
+    @keyframes mascotFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .hero-glass { background:rgba(255,255,255,0.12); backdrop-filter:blur(28px); -webkit-backdrop-filter:blur(28px); border-radius:24px; border:1px solid rgba(255,255,255,0.2); padding:48px 64px 40px; width:100%; box-shadow:0 8px 32px rgba(0,0,0,0.12); }
+    .hero-badge { display:inline-flex; padding:6px 20px; border-radius:100px; background:rgba(255,255,255,0.18); color:#fff; font-size:14px; font-weight:500; margin-bottom:16px; letter-spacing:0.3px; }
+    .hero-content h1 { font-size:clamp(36px,4.5vw,54px); font-weight:800; color:#fff; line-height:1.15; margin-bottom:10px; text-shadow:0 2px 12px rgba(0,0,0,0.2); }
+    .hero-content .tagline { font-size:18px; color:rgba(255,255,255,0.8); margin-bottom:16px; font-weight:500; }
+    .hero-content .intro { font-size:16px; color:rgba(255,255,255,0.7); line-height:1.85; margin-bottom:26px; text-align:justify; }
+    .hero-scroll-btn { display:inline-flex; align-items:center; gap:6px; padding:12px 32px; border-radius:100px; background:rgba(255,255,255,0.92); color:var(--green-dark); font-size:14px; font-weight:600; transition:transform .15s,box-shadow .2s,background .2s; }
+    .hero-scroll-btn:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(0,0,0,0.15); background:#fff; }
+    .hero-scroll-btn .arrow { display:inline-block; animation:bounceDown 1.5s ease-in-out infinite; }
+    @keyframes bounceDown { 0%,100%{transform:translateY(0)} 50%{transform:translateY(4px)} }
+
+
+    /* ===== 模块一：痛点 ===== */
+    .mod-problem { padding: 52px 0; background: rgba(255,255,255,0.03); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #fff; }
+    .mod-problem .section-header { margin-bottom: 24px; }
+    .mod-problem .section-header h2 { color: #fff; font-size: 24px; }
+    .mod-problem .section-header p { color: rgba(255,255,255,0.55); font-size: 14px; }
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .pain-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 24px 22px; position: relative; overflow: hidden; transition: background 0.3s, transform 0.3s; }
+    .pain-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-3px); }
+    .pain-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: linear-gradient(90deg, rgba(231,76,60,0.7), rgba(230,126,34,0.7)); }
+    .pain-emoji { font-size: 26px; margin-bottom: 10px; display: block; }
+    .pain-card h3 { font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.95); margin-bottom: 8px; }
+    .pain-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+    /* ===== 模块二：破局 ===== */
+    .mod-solution { padding: 52px 0; background: rgba(255,255,255,0.03); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .mod-solution .section-header { margin-bottom: 16px; }
+    .mod-solution .section-header h2 { font-size: 24px; color: #fff; }
+    .mod-solution .section-header p { font-size: 14px; color: rgba(255,255,255,0.55); }
+    .sol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .sol-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 24px 22px; transition: background 0.3s, transform 0.3s; }
+    .sol-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
+    .sol-emoji { font-size: 26px; margin-bottom: 10px; display: block; }
+    .sol-card h3 { font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.95); margin-bottom: 8px; }
+    .sol-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+    .sol-intro { text-align: center; max-width: 560px; margin: 0 auto 24px; font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+    /* ===== 底部页脚 ===== */
+    .bottom-bar { background: rgba(10,22,16,0.6); backdrop-filter: blur(12px); padding: 18px 24px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.06); }
+    .bottom-bar .brand { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7); }
+    .bottom-bar .links a { font-size: 13px; color: rgba(255,255,255,0.4); margin: 0 10px; transition: color 0.2s; }
+    .bottom-bar .links a:hover { color: rgba(255,255,255,0.8); }
+    .bottom-bar .copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 768px) {
+      .hero-glass { padding:24px 20px 22px; }
+      .hero-mascot-top img { width:80px; height:80px; }
+      .pain-grid, .sol-grid { grid-template-columns: 1fr; }
+      .bottom-bar { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="mascot.png" alt="威小果"><span>威海无花果数智助农</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="active">首页</a>
+        <a href="tech.html">产品亮点</a>
+        <a href="products.html">高能产品仓</a>
+        <a href="b2b.html">B端合作</a>
+        <a href="impact.html">助农日记</a>
+        <a href="survey.html">调研展示</a>
+      </div>
+      <a href="b2b.html" class="nav-cta">申请B端试样</a>
+    </div>
+  </nav>
+
+  <!-- ===== 一屏 Hero ===== -->
+  <div class="home-hero">
+    <div class="hero-main">
+      <div class="hero-content">
+        <div class="hero-mascot-top"><img src="mascot.png" alt="威小果"></div>
+        <div class="hero-glass">
+          <span class="hero-badge">✦ 山东省首个数智IP驱动的无花果全产业链增值平台</span>
+          <h1>"果"色天香</h1>
+          <p class="tagline">甜过初恋，鲜过浪尖 ｜ 海风酿造的东方甜</p>
+          <p class="intro">我们不只是简单的农产品搬运工，更是深耕威海无花果产业、推动乡村产业迭代升级的数字引擎与价值创造者。本项目立足威海无花果得天独厚的地域禀赋与产业基础，精准破解传统无花果产业附加值低、品牌辨识度弱、产业链条松散、溯源体系缺失等痛点，打造山东首个以数智IP为核心驱动力的无花果全产业链增值平台。</p>
+          <p class="intro">项目以原创IP「威小果」为核心抓手，赋予威海无花果鲜活的品牌人格与文化内涵，打破传统农产品"有产品、无品牌"的困境；同时深度融合区块链溯源技术，实现从种植、采摘、加工到销售的全流程可追溯，筑牢产品品质信任壁垒；联动物联网技术实现精准种植、科学管护，保障无花果品质稳定；借助AI智能营销手段，精准触达目标消费群体，拓宽销售渠道、提升品牌影响力，助力无花果产品走出威海、走向全国。</p>
+          <p class="intro">通过IP赋能、技术加持、全链联动，彻底打通"赚钱—助农—再发展"的良性商业闭环，让种植户共享产业增值红利，让传统的威海无花果摆脱"低端农产品"的标签，成功蜕变为兼具品质、文化与品牌价值的高溢价文化消费品，以数智力量激活乡村振兴新动能，推动威海无花果产业高质量、可持续发展。</p>
+          <a href="#problem" class="hero-scroll-btn">开启寻甜之旅 <span class="arrow">↓</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 模块一：痛点 ===== -->
+  <section class="mod-problem" id="problem">
+    <div class="container">
+      <div class="section-header">
+        <h2>为什么我们要重塑威海无花果？</h2>
+        <p>威海无花果年产量占全国20%以上，但传统产业正面临三大瓶颈。</p>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card reveal">
+          <span class="pain-emoji">📉</span>
+          <h3>资源浪费严重</h3>
+          <p>传统加工粗放，果实利用率不足60%，茎、叶常被废弃，缺乏高附加值产品。</p>
+        </div>
+        <div class="pain-card reveal">
+          <span class="pain-emoji">🏷️</span>
+          <h3>品牌价值缺失</h3>
+          <p>长期沦为"原料供应商"，缺乏辨识度的品牌IP，溢价空间极为有限。</p>
+        </div>
+        <div class="pain-card reveal">
+          <span class="pain-emoji">🌐</span>
+          <h3>数智化转型滞后</h3>
+          <p>产销链路割裂，数据孤岛导致无法精准预测市场，电商渗透率不足30%。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 模块二：破局方案 ===== -->
+  <section class="mod-solution" id="solution">
+    <div class="container">
+      <div class="section-header">
+        <h2>数智赋能，构建良性循环</h2>
+        <p>我们不只是卖水果，更是产业升级的引擎。</p>
+      </div>
+      <p class="sol-intro">通过重构商业价值链，实现"赚钱 → 助农 → 再发展"的可持续闭环。</p>
+      <div class="sol-grid">
+        <div class="sol-card reveal">
+          <span class="sol-emoji">🌟</span>
+          <h3>品牌IP化</h3>
+          <p>打造原创IP"威小果"，以拟人化形象讲述"百年传承与海洋馈赠"的品牌故事，突破农产品同质化竞争。</p>
+        </div>
+        <div class="sol-card reveal">
+          <span class="sol-emoji">🏭</span>
+          <h3>全果高值化</h3>
+          <p>联合科研机构深度加工，将无花果转化为琥珀果酱、微醺果酒及文创周边，实现资源"零废弃"。</p>
+        </div>
+        <div class="sol-card reveal">
+          <span class="sol-emoji">💻</span>
+          <h3>产销数字化</h3>
+          <p>整合物联网监测、区块链溯源与AI营销，打通"需求洞察—柔性生产—精准营销"的科技闭环。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 页脚 ===== -->
+  <div class="bottom-bar">
+    <span class="brand">"果"色天香 · 数智IP驱动无花果全链增值</span>
+    <span class="links"><a href="tech.html">亮点</a><a href="products.html">产品</a><a href="b2b.html">合作</a><a href="impact.html">助农</a></span>
+    <span class="copy">© 2026 威小果 · 威海无花果数智助农项目</span>
+  </div>
+
+  <!-- ===== 浮动吉祥物 + 聊天 ===== -->
+  <div class="mascot-wrap" id="mascot-wrap" title="点击和威小果聊天">
+    <div class="mascot-el" id="mascot-el"><div class="mascot-inner"><img src="mascot.png" alt="威小果"></div></div>
+  </div>
+  <div class="chat-panel" id="chat-panel">
+    <div class="chat-hd"><h3>和威小果聊天</h3><button class="chat-close" id="chat-close">×</button></div>
+    <div class="chat-msgs" id="chat-msgs"></div>
+    <div class="chat-input-wrap">
+      <input type="text" class="chat-input" id="chat-input" placeholder="输入消息..." maxlength="200" autocomplete="off">
+      <button class="chat-send" id="chat-send">➤</button>
+    </div>
+  </div>
+
+  <script src="chat.js"></script>
+  <script>
+  (function(){
+    var obs = new IntersectionObserver(function(e){
+      e.forEach(function(en){ if(en.isIntersecting) en.target.classList.add('visible'); });
+    }, {threshold: 0.15});
+    document.querySelectorAll('.reveal').forEach(function(c){ obs.observe(c); });
+  })();
+  </script>
+</body>
+</html>

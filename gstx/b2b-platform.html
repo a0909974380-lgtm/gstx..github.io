@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数智平台 · B端合作 · 威海无花果数智助农</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="b2b-common.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .plat-hero { max-width:1100px; margin:0 auto 48px; padding:0 24px; display:flex; align-items:center; gap:40px; }
+    .plat-hero-txt { flex:1; }
+    .plat-hero-txt h3 { font-size:22px; font-weight:800; color:#fff; margin-bottom:12px; line-height:1.4; }
+    .plat-hero-txt h3 .accent { color:#3ec4a7; }
+    .plat-hero-txt p { font-size:14px; color:rgba(255,255,255,0.5); line-height:1.8; }
+    .plat-hero-visual { flex:0 0 340px; background:rgba(10,20,14,0.6); border:1px solid rgba(62,196,167,0.12); border-radius:20px; padding:28px; backdrop-filter:blur(16px); }
+    .plat-stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .plat-stat { text-align:center; padding:16px 8px; border-radius:12px; background:rgba(62,196,167,0.06); border:1px solid rgba(62,196,167,0.1); }
+    .plat-stat .ps-num { font-family:'Outfit',sans-serif; font-size:28px; font-weight:800; color:#3ec4a7; }
+    .plat-stat .ps-label { font-size:11px; color:rgba(255,255,255,0.4); margin-top:4px; }
+
+    .func-section { max-width:1100px; margin:0 auto 56px; padding:0 24px; }
+    .func-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .func-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:26px 20px; text-align:center; transition:transform .3s,border-color .3s; }
+    .func-card:hover { transform:translateY(-3px); border-color:rgba(62,196,167,0.2); }
+    .func-card .fc-icon { font-size:32px; margin-bottom:10px; }
+    .func-card h4 { font-size:14px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .func-card p { font-size:12px; color:rgba(255,255,255,0.45); line-height:1.6; }
+
+    .two-col { max-width:1100px; margin:0 auto 56px; padding:0 24px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+
+    .dash-preview { max-width:1100px; margin:0 auto 56px; padding:0 24px; }
+    .dash-mock { background:rgba(10,20,14,0.7); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:32px; backdrop-filter:blur(16px); }
+    .dash-hd { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+    .dash-hd .dh-dot { width:10px; height:10px; border-radius:50%; }
+    .dash-hd h4 { font-size:15px; font-weight:700; color:#fff; }
+    .dash-row { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:20px; }
+    .dash-kpi { padding:18px 14px; border-radius:12px; text-align:center; }
+    .dash-kpi .dk-num { font-family:'Outfit',sans-serif; font-size:24px; font-weight:800; }
+    .dash-kpi .dk-label { font-size:11px; color:rgba(255,255,255,0.5); margin-top:4px; }
+    .dash-chart { display:grid; grid-template-columns:2fr 1fr; gap:14px; }
+    .dash-chart-block { padding:20px; border-radius:14px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); }
+    .dash-chart-block h5 { font-size:12px; font-weight:600; color:rgba(255,255,255,0.5); margin-bottom:14px; }
+    .bar-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+    .bar-row .br-label { font-size:11px; color:rgba(255,255,255,0.4); width:48px; text-align:right; }
+    .bar-row .br-bar { flex:1; height:18px; border-radius:9px; background:rgba(255,255,255,0.04); overflow:hidden; }
+    .bar-row .br-fill { height:100%; border-radius:9px; }
+    .ring-list { list-style:none; padding:0; margin:0; }
+    .ring-list li { display:flex; align-items:center; gap:8px; font-size:12px; color:rgba(255,255,255,0.5); margin-bottom:10px; }
+    .ring-list li .rl-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+    .ring-list li .rl-pct { font-family:'Outfit',sans-serif; font-weight:700; color:#fff; margin-left:auto; }
+
+    .api-section { max-width:1100px; margin:0 auto; padding:0 24px; }
+    .api-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .api-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:22px 18px; }
+    .api-card h4 { font-size:13px; font-weight:700; color:#5ee8c5; margin-bottom:6px; font-family:'Outfit',monospace; }
+    .api-card p { font-size:12px; color:rgba(255,255,255,0.4); line-height:1.6; }
+
+    @media(max-width:768px){
+      .plat-hero { flex-direction:column; }
+      .plat-hero-visual { flex:none; width:100%; }
+      .func-grid { grid-template-columns:1fr 1fr; }
+      .two-col { grid-template-columns:1fr; }
+      .dash-row { grid-template-columns:1fr 1fr; }
+      .dash-chart { grid-template-columns:1fr; }
+      .api-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="mascot.png" alt="威小果"><span>威海无花果数智助农</span></a>
+    <div class="nav-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html" class="active">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div>
+    <a href="b2b-contact.html" class="nav-cta">申请B端试样</a>
+  </div></nav>
+
+  <div class="b2b-sub-nav"><div class="b2b-sub-nav-inner">
+    <a href="b2b.html">餐饮茶饮</a><a href="b2b-corp.html">企业集采</a><a href="b2b-platform.html" class="active">数智平台</a><a href="b2b-ip.html">IP联名</a><a href="b2b-contact.html">合作咨询</a>
+  </div></div>
+
+  <section class="b2b-page">
+    <div class="sec-hd"><h2>看得见的源头，<span class="accent">百分百的安心</span></h2></div>
+    <p class="sec-sub">强大的供应链是合作的基石。我们搭建了全新的 B2B 数智平台，让采购变得前所未有的透明。</p>
+
+    <!-- 平台概览 -->
+    <div class="plat-hero reveal">
+      <div class="plat-hero-txt">
+        <h3>全链数据 <span class="accent">一屏掌控</span></h3>
+        <p>B端采购客户登录专属数智平台后，可实时查看果园产量预测、品质评级、冷链物流状态、库存水位等核心数据，所有操作记录同步上链，不可篡改。</p>
+      </div>
+      <div class="plat-hero-visual">
+        <div class="plat-stats">
+          <div class="plat-stat"><div class="ps-num">2,800+</div><div class="ps-label">亩 数字果园</div></div>
+          <div class="plat-stat"><div class="ps-num">99.6%</div><div class="ps-label">溯源覆盖率</div></div>
+          <div class="plat-stat"><div class="ps-num">24h</div><div class="ps-label">实时监控</div></div>
+          <div class="plat-stat"><div class="ps-num">15min</div><div class="ps-label">预警响应</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 核心功能 -->
+    <div class="func-section">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>平台核心 <span class="accent">功能</span></h2></div>
+      <div class="func-grid">
+        <div class="func-card reveal"><div class="fc-icon">🌳</div><h4>果园云认领</h4><p>在线预订"专属果园区块"，实时查看种植数据，深度参与采收决策</p></div>
+        <div class="func-card reveal"><div class="fc-icon">🔗</div><h4>区块链溯源</h4><p>"一果一码"溯源系统接口，支持接入合伙人品牌展示，信任背书</p></div>
+        <div class="func-card reveal"><div class="fc-icon">📊</div><h4>数据大屏</h4><p>产量预测、品质报告、物流追踪、销售分析，多维数据可视化呈现</p></div>
+        <div class="func-card reveal"><div class="fc-icon">⚡</div><h4>智能预警</h4><p>温湿度异常、库存不足、物流延误自动预警，15分钟内响应处理</p></div>
+        <div class="func-card reveal"><div class="fc-icon">📦</div><h4>在线下单</h4><p>企业客户直接在线采购，支持协议价自动匹配、批量下单一键操作</p></div>
+        <div class="func-card reveal"><div class="fc-icon">📝</div><h4>品质报告</h4><p>每批次自动生成农残检测、糖度分析、冷链温控等全维度品质报告</p></div>
+        <div class="func-card reveal"><div class="fc-icon">🗺️</div><h4>果园地图</h4><p>GIS定位所有合作果园，卫星图实时展示种植区划、成熟度分布</p></div>
+        <div class="func-card reveal"><div class="fc-icon">🔐</div><h4>权限管理</h4><p>多角色账户体系，采购、质检、财务各司其职，操作可审计可追溯</p></div>
+      </div>
+    </div>
+
+    <!-- 两大核心模块深入 -->
+    <div class="two-col">
+      <div class="glass-card reveal">
+        <span class="gc-icon">🌳</span>
+        <h3>专属果园云认领</h3>
+        <p>开放种植基地实时监控数据（产量预测、品质评级、生长周期）。餐饮及大客户可在线直接预订"专属果园区块"，甚至深度参与采收决策。</p>
+        <ul style="margin-top:14px;padding-left:16px;">
+          <li style="font-size:12.5px;color:rgba(255,255,255,0.5);margin-bottom:6px;line-height:1.6;">实时查看果园温湿度、光照、土壤数据</li>
+          <li style="font-size:12.5px;color:rgba(255,255,255,0.5);margin-bottom:6px;line-height:1.6;">AI 预测最佳采收时间窗口，糖度达标即通知</li>
+          <li style="font-size:12.5px;color:rgba(255,255,255,0.5);margin-bottom:6px;line-height:1.6;">远程参与施肥、灌溉决策，全程有据可查</li>
+          <li style="font-size:12.5px;color:rgba(255,255,255,0.5);line-height:1.6;">产出果实优先供应，品质分级专属通道</li>
+        </ul>
+      </div>
+      <div class="glass-card reveal">
+        <span class="gc-icon">🔗</span>
+        <h3>全链数据防伪溯源</h3>
+        <p>提供基于区块链的"一果一码"溯源系统接口，支持将溯源数据接入合伙人品牌展示中，为终端消费者提供 <span class="highlight">信任背书</span>。</p>
+        <ul style="margin-top:14px;padding-left:16px;">
+          <li style="font-size:12.5px;color:rgba(255,255,255,0.5);margin-bottom:6px;line-height:1.6;">RESTful API 一键接入，最快 2 天完成对接</li>
+          <li style="font-size:12.5px;color:rgba(255,255,255,0.5);margin-bottom:6px;line-height:1.6;">溯源页面支持品牌定制，与合伙人VI体系融合</li>
+          <li style="font-size:12.5px;color:rgba(255,255,255,0.5);margin-bottom:6px;line-height:1.6;">每条溯源记录写入区块链，不可篡改不可删除</li>
+          <li style="font-size:12.5px;color:rgba(255,255,255,0.5);line-height:1.6;">消费者扫码即查，覆盖种植→加工→物流全节点</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 数据大屏预览 -->
+    <div class="dash-preview">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>数据大屏 <span class="accent">预览</span></h2></div>
+      <div class="dash-mock reveal">
+        <div class="dash-hd">
+          <div class="dh-dot" style="background:#ff5f57;"></div>
+          <div class="dh-dot" style="background:#febc2e;"></div>
+          <div class="dh-dot" style="background:#28c840;"></div>
+          <h4>威海无花果 · B端供应链监控大屏</h4>
+        </div>
+        <div class="dash-row">
+          <div class="dash-kpi" style="background:rgba(62,196,167,0.08);"><div class="dk-num" style="color:#3ec4a7;">12,640</div><div class="dk-label">今日采摘量 (kg)</div></div>
+          <div class="dash-kpi" style="background:rgba(94,232,197,0.08);"><div class="dk-num" style="color:#5ee8c5;">98.2%</div><div class="dk-label">品控合格率</div></div>
+          <div class="dash-kpi" style="background:rgba(240,100,74,0.08);"><div class="dk-num" style="color:#f0644a;">3</div><div class="dk-label">异常预警</div></div>
+          <div class="dash-kpi" style="background:rgba(168,120,255,0.08);"><div class="dk-num" style="color:#a878ff;">¥286万</div><div class="dk-label">本月交易额</div></div>
+        </div>
+        <div class="dash-chart">
+          <div class="dash-chart-block">
+            <h5>月度出货趋势</h5>
+            <div class="bar-row"><span class="br-label">威海A园</span><div class="br-bar"><div class="br-fill" style="width:82%;background:linear-gradient(90deg,#3ec4a7,#5ee8c5);"></div></div></div>
+            <div class="bar-row"><span class="br-label">威海B园</span><div class="br-bar"><div class="br-fill" style="width:65%;background:linear-gradient(90deg,#3ec4a7,#5ee8c5);"></div></div></div>
+            <div class="bar-row"><span class="br-label">乳山基地</span><div class="br-bar"><div class="br-fill" style="width:73%;background:linear-gradient(90deg,#3ec4a7,#5ee8c5);"></div></div></div>
+            <div class="bar-row"><span class="br-label">荣成基地</span><div class="br-bar"><div class="br-fill" style="width:48%;background:linear-gradient(90deg,#3ec4a7,#5ee8c5);"></div></div></div>
+            <div class="bar-row"><span class="br-label">环翠果园</span><div class="br-bar"><div class="br-fill" style="width:58%;background:linear-gradient(90deg,#3ec4a7,#5ee8c5);"></div></div></div>
+          </div>
+          <div class="dash-chart-block">
+            <h5>品类占比分析</h5>
+            <ul class="ring-list">
+              <li><span class="rl-dot" style="background:#3ec4a7;"></span>鲜果直供<span class="rl-pct">38%</span></li>
+              <li><span class="rl-dot" style="background:#5ee8c5;"></span>果酱/果酒<span class="rl-pct">26%</span></li>
+              <li><span class="rl-dot" style="background:#a878ff;"></span>果干/茶饮<span class="rl-pct">19%</span></li>
+              <li><span class="rl-dot" style="background:#f0644a;"></span>企业定制<span class="rl-pct">12%</span></li>
+              <li><span class="rl-dot" style="background:#febc2e;"></span>其他<span class="rl-pct">5%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- API 接入 -->
+    <div class="api-section">
+      <div class="sec-hd" style="margin-bottom:24px;"><h2>开放 <span class="accent">API 接口</span></h2></div>
+      <div class="api-grid">
+        <div class="api-card reveal"><h4>/trace/query</h4><p>溯源查询接口 — 通过溯源码或批次号查询完整的种植、加工、物流全链信息</p></div>
+        <div class="api-card reveal"><h4>/order/create</h4><p>在线下单接口 — 提交采购订单，支持协议价匹配、库存校验、物流排程</p></div>
+        <div class="api-card reveal"><h4>/farm/realtime</h4><p>果园实时数据 — 获取温湿度、光照、土壤等 IoT 传感器实时推送数据</p></div>
+        <div class="api-card reveal"><h4>/quality/report</h4><p>品质报告查询 — 按批次查询农残检测、糖度分析、微生物检验等报告</p></div>
+        <div class="api-card reveal"><h4>/logistics/track</h4><p>物流追踪接口 — 冷链全程温湿度、GPS 定位、预计到达时间实时查询</p></div>
+        <div class="api-card reveal"><h4>/alert/subscribe</h4><p>预警订阅接口 — Webhook 推送温度异常、库存预警、物流延误等事件</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="footer-brand">威小果</div><div class="footer-tagline">"果"色天香 · 数智IP驱动无花果全链增值</div><div class="footer-links"><a href="index.html">首页</a><a href="tech.html">产品亮点</a><a href="products.html">高能产品仓</a><a href="b2b.html">B端合作</a><a href="impact.html">助农日记</a><a href="survey.html">调研展示</a></div><div class="footer-copy">© 2026 威小果 · 威海无花果数智助农项目</div></footer>
+  <div class="mascot-wrap" id="mascot-wrap" title="点击和威小果聊天"><div class="mascot-el" id="mascot-el"><div class="mascot-inner"><img src="mascot.png" alt="威小果"></div></div></div>
+  <div class="chat-panel" id="chat-panel"><div class="chat-hd"><h3>和威小果聊天</h3><button class="chat-close" id="chat-close">×</button></div><div class="chat-msgs" id="chat-msgs"></div><div class="chat-input-wrap"><input type="text" class="chat-input" id="chat-input" placeholder="输入消息..." maxlength="200" autocomplete="off"><button class="chat-send" id="chat-send">➤</button></div></div>
+  <script src="chat.js"></script>
+  <script>(function(){var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.1});document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%6)*.06+'s';obs.observe(el);});lucide.createIcons();})();</script>
+</body>
+</html>
